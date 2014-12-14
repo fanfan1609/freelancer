@@ -1,0 +1,17 @@
+Hi, I have mofified scripts and then you can try with it, but you must set something before using it
+
+1. config.php : 
+	define(GUSER, 'xxxx@gmail.com'); // Set up your gmail 
+	define(GPWD, 'xxxxx'); // Set up your gmail password
+Please set your gmail account and password here for testing sending mail. I just can send mail with SMTP in this testing.
+
+2. result.php
+In result.php file, please set somethings as $from, $from_name, $subject ( line 59-61 ) to sending email.
+You can set email body format , and give it to me, I will change for you.
+
+3. About footer.php and header.php, I have change their location to same path with 01.php; so please use like that for testing. 
+I will change to original when receive all your source for next implement.
+
+If you have any problems, please ask me as soon as please.
+Thanks
+
