@@ -1,0 +1,35 @@
+package exam;
+
+public class ContactDetail {
+	
+	private String fName;
+	private String lName;
+	private int phoneNo;
+	
+	public ContactDetail(String fname, String lname, int phone)
+	{
+		fName = fname;
+		lName = lname;
+		phoneNo = phone;
+	}
+	
+	public String getFName()
+	{
+		return fName;
+	}
+	
+	public String getLName()
+	{
+		return lName;
+	}
+	
+	public int getPhoneNo()
+	{
+		return phoneNo;
+	}
+	
+	public String toString()
+	{
+		return "Contact detail : " + fName + " " + lName + "-" + phoneNo;
+	}
+}

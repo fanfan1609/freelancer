@@ -1,0 +1,38 @@
+package exam;
+
+import java.util.ArrayList;
+
+public class PhoneOwner {
+	private String ownerName;
+	private ArrayList<ContactDetail> contactList;
+	
+	public PhoneOwner(String name)
+	{
+		ownerName = name;
+		contactList = new ArrayList<ContactDetail>();
+	}
+	
+	public void addContact(ContactDetail contact)
+	{
+		contactList.add(contact);
+	}
+	
+	public String toString()
+	{
+		String output = "";
+		output += "Owner name :" + ownerName + "\n";
+		output += "Contact Detail : \n"; 
+		for( ContactDetail curContact : contactList)
+		{
+			output += curContact.toString() + "\n";
+		}
+		
+		return output;
+	}
+	
+	public String getOwner()
+	{
+		return ownerName;
+	}
+	
+}

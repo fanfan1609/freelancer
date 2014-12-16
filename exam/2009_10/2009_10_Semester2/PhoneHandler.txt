@@ -1,0 +1,33 @@
+package exam;
+
+public class PhoneHandler {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// Create new phone owner object
+		PhoneOwner owner = new PhoneOwner("Dat");
+		
+		// Create 5 contact detail
+		ContactDetail contact1 = new ContactDetail("Contact 1", "ct1", 123456);
+		ContactDetail contact2 = new ContactDetail("Contact 2", "ct2", 112456);
+		ContactDetail contact3 = new ContactDetail("Contact 3", "ct3", 1533456);
+		ContactDetail contact4 = new ContactDetail("Contact 4", "ct4", 12433456);
+		ContactDetail contact5 = new ContactDetail("Contact 5", "ct5", 123234456);
+		
+		// Add contact to owner
+		owner.addContact(contact1);
+		owner.addContact(contact2);
+		owner.addContact(contact3);
+		owner.addContact(contact4);
+		owner.addContact(contact5);
+		
+		System.out.println(owner.toString());
+		// Using singleton
+		MyUtilities.getInstance().saveContactList(owner);
+		
+		// Reload phone owner from the disk
+		System.out.println(MyUtilities.getInstance().loadContactList());
+	}
+
+}
