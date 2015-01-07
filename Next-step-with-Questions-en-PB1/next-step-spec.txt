@@ -1,0 +1,31 @@
+For the next step, I want the questions implemented (array or database style more up to you) and IF the user inputs an e-mail address, it should also be inserted into the Otto-database, and then these 2-3 different end-pages should be shown with different texts depending on the answers. For now the text on the tack.php can be the basis for the text, since it's actually an answer to the index.php file which includes the last few questions that would be optional.
+
+To send to the Otto database, you need to POST to that page using the attributes:
+action='http://www.sonician.info/otto/handlers/form_handler.php' method=POST accept-charset='utf-8'
+<input type='hidden' name='email' value='$email'/>
+<input type='hidden' name='cellphone' value='$phone'/>
+<input type='hidden' name='seq' value='161'/>
+<input type='hidden' name='sender' value='1'/>
+<input type='hidden' name='a' value='sub' >
+<input type='hidden' name='ref' value='2mintest-en' />
+<input type='hidden' name='custom_12' value='XXX' />
+...and then onward custom_13 etc.
+
+Note that phone needs to be called cellphone, and the underscores in all the answers for the questions, perhaps the first one will be the calculation-integer, and then the rest in custom_13, custom_14 etc.
+
+
+As mentioned, I would like to add an integer attribute to some (or each if it's easier) of the questions in order to give "points" e.g. 0,+3,-3 so I can calculate a number, so I can at the end decide to show 2-3 different showresult-pages depending on if this attributed value is above or below a calculated value. For now, all questions can get a "0" as this integer value.
+ 
+I'm envisioning the end pages, laid out a bit like an A4 product sheet with some overall texts depending on the calculated value, and then with some of the individual text parts being different depending on a particular answer to just one of the questions and perhaps even to use an input type=text field for some questions where the user can enter a value and this value can be used for the final page, too (even in calculating new values).
+ 
+I will also use this external contact management system (Otto) to be able to re-create the end-page for the users who has filled in everything since the data will then be in its custom-fields.
+
+If you have a look at the attached presentation, you'll see the questions I'm thinking of using.
+
+You'll notice that the last few questions are actually collected from the attached online "calculator" that I already wrote, and it would be great if you could integrate that toward the end (before asking for the e-mail again), but also note that thes should be skippable by the user determined on the answer to question 14 (which should also have the logos of the Research companies in the calculator (index.php with results on tack.php) I attach (or as seen on http://www.sonician.com/survey/nyckeltalskalkylator/index.php))
+
+
+
+
+ 
+ 
