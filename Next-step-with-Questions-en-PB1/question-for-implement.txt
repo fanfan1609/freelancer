@@ -1,0 +1,15 @@
+Hi sonician
+
+I have read your note and there are my questions
+
+1. About Implement Style
+- Using database will help maintenance or changing easily, but it need you set up some tables on your current database or create new database. Maybe it takes you some problems. If you can set up it easily, I will implement on database, else I will implement on array.
+
+2. About send data to Otto databse , I am clear and it's not difficult to implement.
+
+3. About 
+======================================================================================
+"You'll notice that the last few questions are actually collected from the attached online "calculator" that I already wrote, and it would be great if you could integrate that toward the end (before asking for the e-mail again), but also note that thes should be skippable by the user determined on the answer to question 14 (which should also have the logos of the Research companies in the calculator (index.php with results on tack.php) I attach (or as seen on http://www.sonician.com/survey/nyckeltalskalkylator/index.php))"
+======================================================================================
+Do it means you want the point is shown when user goes to last page ?
+About skippable, are all questions skippable or just some questions ?
