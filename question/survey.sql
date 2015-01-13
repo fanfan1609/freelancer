@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `is_skippable` tinyint(4) NOT NULL DEFAULT '0',
   `is_deleted` tinyint(4) NOT NULL DEFAULT '0',
-  `type` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'checkbox',
+  `type` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'radio',
   `note` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
