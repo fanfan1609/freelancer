@@ -24,7 +24,16 @@ function showRadio($answers)
 	foreach($answers as $answer )
 	{
 		//sprintf("<input type='radio' name='answer[]' data-point='%s' value='%s' >",$answer['point'],$answer['content']);
-		echo "<input type='radio' class='answer' name='answer' data-point='".$answer['point']."' value='".$answer['content']."' >".$answer['content']." <br>";
+		if (strpos('blank_text', $answer['content']) != -1 )
+		{
+			echo "<input type='radio' class='answer' name='answer' data-point='".$answer['point']."' value='".$answer['content']."' >".
+				str_replace('blank_text', "<input name='answer_value' type='text' >", $answer['content'] )." <br>";
+		} else 
+		{
+			echo "<input type='radio' class='answer' name='answer' data-point='".$answer['point']."' value='".$answer['content']."' >".$answer['content']." <br>";
+		}
+		
+
 	}
 }
 

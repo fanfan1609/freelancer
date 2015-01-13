@@ -12,31 +12,22 @@ if( empty($_POST['question_id']) )
 {
 	$question_id = 1; // first question
 	$_SESSION['count'] = 0;
+	unset($_SESSION['result']);
 } else {
-	$question_id = $_POST['question_id'] + 1; // next question
-
-	// Count question 
-	if( empty($_SESSION['count']) )
-	{
-		$_SESSION['count'] = 1;
-	} else {
-		$_SESSION['count'] = $_SESSION['count'] + 1;
-	}
-
 	// Store data
 	if( empty($_SESSION['result']) )
 	{
 		$_SESSION['result'] = array();
 	}
-	var_dump($_POST);
-
-	$_SESSION['result'][] = array('question' => $_POST['question'],'answer' => $_POST['answer'],'point' => $_POST['point']);
+	$_SESSION['result'][$_POST['question_id']] = array('question' => $_POST['question'],'answer' => $_POST['answer'],'point' => $_POST['point']);
+	
+	$question_id = $_POST['question_id'] + 1; // next question
 }
 
-$total    = $survey->countQuestion();
-if( $total > $_SESSION['count']) // Still has question
+$question = $survey->getQuestion($question_id);
+
+if( $question ) // Still has question
 {
-	$question = $survey->getQuestion($question_id);
 	$answers  = $survey->getAnswers($question_id);
 } else {
 	// Has finished all
@@ -104,6 +95,10 @@ include "footer.php";
 					break;
 				case 'radio':
 					answer = $('.answer:checked') ? $('.answer:checked').val() : '';
+					if( answer.indexOf('blank_text') > -1 ){
+						answer = answer.replace('blank_text',$('input[name="answer_value"]').val());
+						$("input[name='answer']").val(answer);
+					}
 					point  = $('.answer:checked') ? $('.answer:checked').attr('data-point') : 0;
 					break;
 				case 'checkbox':
