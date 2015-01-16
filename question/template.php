@@ -65,3 +65,19 @@ function showText($answers)
 		echo $output;
 	}
 }
+
+/**
+ * Define specific template for question 17
+ * @return [type] [description]
+ */
+function question17()
+{
+	echo "<input type='text' name='answer' class='answer' id='answer'><br>" ;
+	echo "<label><input type='checkbox' id='calculate'>…or calculate it with:</label>";
+	echo "<ul id='calculate-items'>";
+	echo "<li>How many worked with Marketing & Sales last year? [<input type='number' class='calculate' id='sales' name='sales'>]e.g 10</li>";
+	echo "<li>Their average salary per month? [<input type='number' id='salary' class='calculate' name='salary'>] eg. 3000 </li>";
+	echo "<li>How much percentage of their time did they spend on NEW clients vs old ones (or other tasks) on average?  [<input type='number' class='calculate' name='percent' id='percent'>] eg. 75</li>";
+	echo "<li>How much money was spent on marketing to NEW clients last year? [<input type='number' class='calculate' id='spent' name='spent'>] e.g. 25 000 </li>";
+	echo "</ul>";
+}

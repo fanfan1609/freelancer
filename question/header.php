@@ -3,10 +3,6 @@ session_start();
 include_once 'config.php';
 header('Content-Type: text/html; charset=utf-8');
 ?>
-
-	
-
-	
 	<style>
 body, p, h1, h2, h3{
 color: #333;
@@ -50,7 +46,6 @@ input[type=submit]{
 	border-radius: 4px;
 	color: #FFF;
 	font-weight: bold;
-	padding: 15px;
 	text-decoration: none;
 	text-transform: uppercase;
 	text-align: center;
@@ -58,7 +53,7 @@ input[type=submit]{
 	font-size: 17px;
 	background: none repeat scroll 0% 0% #7EBB14;
 	transition: all 0.2s linear 0s;
-	}
+}
 input[type=submit]:hover {
     background: none repeat scroll 0% 0% #25BB28;
     text-decoration: none;
@@ -91,18 +86,12 @@ td {
 	padding: 15px;
 	font-size: 17px;
 	background: none repeat scroll 0% 0% #fff;
+	background-size: cover;
 	transition: all 0.2s linear 0s;
 	font-family: sans-serif;
 	width:100%;
 	height:100%;
 	position:relative;
-	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(images/00.jpg) repeat 0 0, url(images/00.jpg) repeat 0 0;
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,0.7))), url(images/00.jpg) repeat 0 0;
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-		background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-		background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-		background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
 }
 select {
 	/* border: 1px inset black; */
@@ -117,11 +106,5 @@ select {
 .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
 .sortable-number { width: 25px;float: right;line-height: 1em;text-align: center; }
 */
-
 </style>
 <body>
-	
-	
-
-
-    
