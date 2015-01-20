@@ -1,4 +1,5 @@
 <?php
+ob_start();
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 //include "$root/survey/test/header.php";
 include_once "database.php";
@@ -17,7 +18,10 @@ if( empty($_POST['question_id']) )
 	{
 		$_SESSION['result'] = array();
 	}
-	$_SESSION['result'][$_POST['question_id']] = array('question' => $_POST['question'],'answer' => $_POST['answer'],'point' => $_POST['point']);
+	$_SESSION['result'][$_POST['question_id']] = array(
+		'question' => $_POST['question'],
+		'answer' => !empty($_POST['answer']) ? $_POST['answer'] : '' ,
+		'point' => $_POST['point']);
 	
 	$question_id = $_POST['question_id'] + 1; // next question
 	if( $question_id == 17 )
@@ -33,14 +37,13 @@ if( $question ) // Still has question
 	$answers  = $survey->getAnswers($question_id);
 } else {
 	// Has finished all
-	ob_start();
+	// ob_clean();
 	header("Location: result.php");
-	exit();
 }
 ?>
 
 <div id="testbox">
-<?php if(isset($question)):?>
+<?php if(!empty($question)):?>
 	<form method='post' id="form00" name="form00" action='' accept-charset='utf-8'>
 	<?php if($question_id == 1):?>
 		<h1>Do the 2-minute test</h1>
@@ -109,31 +112,39 @@ include "footer.php";
 					point  = $('.answer').find('option:selected') ? $('.answer').find('option:selected').attr('data-point') : 0;
 					break;
 				case 'radio':
-					answer = $('.answer:checked') ? $('.answer:checked').val() : '';
+					answer = $('.answer:checked').length == 1 ? $('.answer:checked').val() : '';
+					
 					if( answer.indexOf('blank_text') > -1 ){
 						answer = answer.replace('blank_text',$('input[name="answer_value"]').val());
 						$("input[name='answer']").val(answer);
 					}
+
 					point  = $('.answer:checked') ? $('.answer:checked').attr('data-point') : 0;
+					
 					break;
 				case 'checkbox':
 					answer = [];
-					$('.answer:checked').each(function(){
-						// answer += $(this).val() +",";
-						answer.push($(this).val());
-						point = point + parseInt($(this).attr('data-point'));
-					});
+					
+					if( $('.answer:checked').length > 0){
+						$('.answer:checked').each(function(){
+							// answer += $(this).val() +",";
+							answer.push($(this).val());
+							point = point + parseInt($(this).attr('data-point'));
+						});
+					}
+					
 					$("input[name='answer']").val(answer);
 					break;
 			}
 			
 			$("input[name='point']").val(point);
-			if( is_skip === 0 && !answer )
+			if( is_skip == 0 && answer.length < 1 )
 			{
-				alert("Please choose one option");
+				msg = type != 'text' ? "Please choose one option" : "Please input value";
+				alert(msg);
             	return false;
 			}
-			return true;
+			//return true;
 		});
 	
 		displayCalculate();
@@ -165,4 +176,3 @@ include "footer.php";
 		$("#answer").val(calccac);
 	}
 </script>
-

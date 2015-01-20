@@ -29,7 +29,7 @@ include "header.php";
         <?php 
         if(!empty($_SESSION['result'])) :
             foreach($_SESSION['result'] as $i => $result):?>
-            <input type="hidden" name='custom_<?php echo $i ?>' value='<?php echo $result['answer'] ?>' >
+            <input type="hidden" name='custom_<?php echo $i+11 ?>' value='<?php echo $result['answer'] ?>' >
         <?php
             endforeach;
         endif;?>
