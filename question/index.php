@@ -101,6 +101,9 @@ include "footer.php";
 		var is_skip = $("#is_skippable").val(); 
 		var answer  = '';
 		var point   = 0;
+
+		$("[type='radio']").first().attr('checked','checked');
+		$("[type='checkbox']").first().attr('checked','checked');
 		$("#form00").submit(function(){
 			switch(type){
 				case 'text':
