@@ -1,0 +1,66 @@
+.container {
+	display: table;
+}
+
+.left {
+	/*float: left;*/
+	width: 35%;
+	display: table-cell;
+}
+
+.right {
+	/*float: right;*/
+	width: 65%;
+	border: solid 1px;
+	display: table-cell;
+	padding: 10px;
+}
+
+footer ul,.adv ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+.adv ul li {
+	display: inline-block;
+	margin: 10px;
+	width: 23%;
+	position: relative;
+}
+
+.description ul {
+	/*margin: 0;
+	padding: 0*/
+	/*text-align: center;*/
+}
+
+.floatleft {
+	float: left;
+	margin-left : 10%;
+}
+
+.floatright {
+	float: right;
+	margin-right: 50%;
+}
+
+.description ul li {
+	/*display: inline-block;*/
+	/*margin: 5px;
+	width: 48%;*/
+}
+
+footer ul li{
+	display: inline-block;
+	margin: 10px;
+	width: 23%;
+	position: relative;
+	vertical-align: middle;
+}
+
+.clear {
+	clear : both;
+}
+
