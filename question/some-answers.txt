@@ -1,0 +1,14 @@
+IF <tracker-answer=ENECTO> THEN: 
+"Since you already use Enecto ProspectFinder, you should know that there's a direct integration with Otto&reg; such that your web-site visitors can be written directly into Otto, and you have three choices to read in which individuals would be behind your web-visits: 
+i) call and find out yourself, 
+ii) Let Softtalk call and chase them for €25/contact, or 
+iii) automatically read contact details to leading company officials from Bisnode at about €1 per contact."
+
+IF <marketing-way-to-use-in-future=Direct Marketing> THEN:
+"Since you'll use Direct Marketing, Otto&reg; will give you short-URLs on the form <b>be2.co/yxkhg3</b> and QR-codes to help you track contacts & their actions."
+
+IF <ALREADY CRM, e.g. Salesforce, Sugar, MS Dynamics etc> THEN PER CRM:
+"You can integrate /SALESFORCE (etc)/ directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue work in /SALESFORCE (etc)."
+
+IF <ALREADY NEWSLETTER AND more than 1 working with marketing> THEN:
+"From Otto&reg; you could send Newsletter as well, but more importantly, you'll be able to send e-mails from all users to all their contacts just as if each user would have sent it directly from Outlook themselves. It will also (check the FAQ).
