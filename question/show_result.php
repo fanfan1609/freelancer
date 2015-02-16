@@ -1,3 +1,11 @@
+<?php 
+ob_start();
+session_start();
+$point = 0;
+$answer_list = array(1,2,4,5,7,8,9,10,11,12,13);
+//include "$root/survey/test/header.php";
+// include_once "header.php";
+include_once 'answer.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +16,24 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script type="text/javascript" src='js/jquery.min.js'></script>
     <script type="text/javascript" src='js/bootstrap.min.js'></script>
+    <style>
+    #resultbox{
+        padding : 10px 5px;
+    }
+
+    .question {
+        font-weight: bold;
+        line-height: 19px;
+        padding-left: 10px;
+    }
+
+    .answer {
+        background-color: #f9f9f9;
+        border: 1px solid #f0f0f0;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -25,19 +51,15 @@
                 <h3 class="text-primary">
                     <strong>How Otto</strong> can help you get <strong>more client</strong>
                 </h3>
-                <p>
-                <strong>You can add description here by replacing text below</strong><br>
-                    Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-                </p>
-
-                <?php 
-                if(isset($_SESSION['result'])):
-                    foreach($_SESSION['result'] as $i => $result): ?>
-                    
-                <?php 
-                    endforeach;
-                endif;?>
-                
+                <?php if(isset($_SESSION['result'])): ?>
+                    <?php foreach($_SESSION['result'] as $i => $result): $point += $result['point'];?>
+                    <?php if(in_array($i, $answer_list)):?>
+                    <div class="question"><img src='images/question.gif'><?php echo $result['question'] ?></div>
+                    <div class="answer"><img src='images/answer.gif'><?php echo call_user_func('answer_'.$i,$result['answer']) ?></div>
+                    <?php endif;?>
+                    <?php endforeach; ?>
+                <?php endif;?>
+                <p>Total point : <strong><?php echo $point;?></strong></p>
             </div>
             <div class="col-md-7 column" style="border: solid">
                 <dl>
