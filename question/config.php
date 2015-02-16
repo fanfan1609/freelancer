@@ -1,6 +1,6 @@
 <?php
-define("GUSER", 'vqdat169@gmail.com'); // Set up your gmail 
-define("GPWD", 'trangnguyen2104'); // Set up your gmail password
+define("GUSER", ''); // Set up your gmail 
+define("GPWD", ''); // Set up your gmail password
 // Define question array
 
 $question = array(
