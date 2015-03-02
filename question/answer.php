@@ -299,3 +299,8 @@ function answer_13($answer)
 	}
 	return $output;
 }
+
+function answer_19($answer)
+{
+	return $answer;
+}

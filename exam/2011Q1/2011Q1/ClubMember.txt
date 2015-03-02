@@ -1,0 +1,4 @@
+public abstract class ClubMember 
+{
+	public abstract boolean isSubDue();
+}

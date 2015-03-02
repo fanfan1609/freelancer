@@ -1,0 +1,64 @@
+**These are the codes to set up the table I used and to insert data**
+
+
+CREATE DATABASE pathway;
+
+
+CREATE TABLE enroll
+(student_id BIGINT( 20 )  NOT NULL  AUTO_INCREMENT    ,
+surname varchar(255) NOT NULL   ,
+firstname_other varchar(255) NOT NULL   ,
+term_name varchar(255) NOT NULL   ,
+class_name varchar(255) NOT NULL   ,
+date_of_birth date   ,
+student_phone varchar(255)   ,
+user_level varchar(255) NOT NULL   DEFAULT 'student',
+user_pass varchar(255) NOT NULL   DEFAULT '12345',
+PRIMARY KEY  (student_id   )
+);    
+
+
+CREATE TABLE class_room
+(student_id bigint(20) NOT NULL UNIQUE KEY,
+attendance INTEGER (11) NULL,
+class_name varchar(255),
+student_name varchar (255) ,
+term_name varchar(255),
+Accounts INTEGER (11) NULL ,
+Agriculture INTEGER (11) NULL ,
+arts INTEGER (11) NULL ,
+Biology INTEGER (11) NULL ,
+Chemistry INTEGER (11) NULL ,
+Coloring INTEGER (11) NULL ,
+commerce INTEGER (11) NULL ,
+Computer INTEGER (11) NULL ,
+Drawing INTEGER (11) NULL ,
+Economics INTEGER (11) NULL ,
+English INTEGER (11) NULL ,
+French INTEGER (11) NULL ,
+Geography INTEGER (11) NULL ,
+Government INTEGER (11) NULL ,
+percent INTEGER (11) NULL ,
+average INTEGER (11) NULL ,
+min INTEGER (11) NULL ,
+maxa INTEGER (11) NULL ,
+ranking INTEGER (11) NULL 
+);
+
+
+INSERT INTO enroll
+(student_id,surname,firstname_other ,term_name,class_name,user_level,user_pass)VALUES
+(1000,'ADEJARE',' OLATOKE','First Term','JS 3A','student',12345),
+(1001,'BAMGBOYE',' ENIOLA','First Term','JS 3A','student',12345),
+(1002,'JIMOH',' SHARON','First Term','JS 3A','student',12345),
+(1003,'OYELEKE','SHARON IFEOLUWA','First Term','JS 3A','student',12345),
+(1004,'TUNDE-LAWAL',' DAVIS','First Term','JS 3A','student',12345),
+
+INSERT INTO class_room
+(student_id,student_name,term_name,class_name,Accounts,Agriculture,arts,Biology,Drawing,Economics,English,Geography,Government,French,Computer,Chemistry,Coloring,commerce)VALUES
+(1000,'ADEJARE','First Term','JS 3A',51,61,81,61,35,70,74,65,35,70,74,65,25,37),
+(1001,'BAMGBOYE','First Term','JS 3A',52,62,82,62,49,71,75,66,49,71,75,66,26,40),
+(1002,'JIMOH','First Term','JS 3A',53,63,83,63,45,72,76,67,45,72,76,67,27,56),
+(1003,'OYELEKE','First Term','JS 3A',54,64,84,64,53,73,77,68,53,73,77,68,28,67),
+(1004,'TUNDE-LAWAL','First Term','JS 3A',55,65,85,65,58,74,78,69,58,74,78,69,29,68),
+

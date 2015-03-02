@@ -1,0 +1,39 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class MemberTest {
+
+	public static void main(String[] args) {
+
+		Member m1 = new Member("john");
+		Member m2 = new Member("mary");
+		
+		System.out.println(m1.getName());
+		//This would be wrong   
+		//System.out.println(Member.getName());
+		
+		System.out.println(m1);
+		System.out.println(m2);
+
+		Calendar oldCalendar = new GregorianCalendar(2008, 01, 01);
+		m1.setDate(oldCalendar.getTime());
+
+		System.out.println(m1);
+		System.out.println(m2);
+
+		//Does the same thing as the previous two lines
+		m1.print();
+		m2.print();
+		
+		Club footballClub = new Club();
+		footballClub.join(m1);
+		
+		//Using a singleton
+		MyUtilities.getInstance().saveFile(footballClub);
+		
+		//Reload the club from disk
+		Club c = MyUtilities.getInstance().loadFile();
+		
+	}
+
+}

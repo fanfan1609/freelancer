@@ -1,0 +1,11 @@
+package exam;
+
+public class Transaction {
+	private String name;
+	private String desciption;
+	
+	public Transaction(String n, String des){
+		name = n;
+		desciption = des;
+	}
+}

@@ -1,0 +1,56 @@
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Club implements Serializable
+{
+	private ArrayList<Member> membersList;
+	private double subscription;
+	
+	//Overriding the default construtor
+	public Club()
+	{
+		this.membersList = new ArrayList<Member>();
+		this.subscription = 0.0;
+	}
+	
+	public void join(Member someNewMember)
+	{
+		this.membersList.add(someNewMember);
+	}
+	
+	public ArrayList<Member> getMembersList()
+	{
+		return this.membersList;
+	}
+	
+	public void deleteMember(Member member)
+	{
+		this.membersList.remove(member);
+	}
+	
+	public void renewSub(Member member)
+	{
+		for(Member currMember : this.membersList)
+		{
+			if(currMember.equals(member))
+			{
+				currMember.setSubPaid();
+			}
+		}
+	}
+	
+	public String toString()
+	{
+		String outputString = "";
+		for(Member currMember : this.membersList)
+		{
+			outputString += currMember.toString()+"\n";
+		}
+		return outputString;
+	}
+	
+	public void print()
+	{
+		System.out.println(this.toString());
+	}
+}

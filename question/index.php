@@ -18,12 +18,19 @@ if( empty($_POST['question_id']) )
 	{
 		$_SESSION['result'] = array();
 	}
+	
 	$_SESSION['result'][$_POST['question_id']] = array(
 		'question' => $_POST['question'],
 		'answer' => !empty($_POST['answer']) ? $_POST['answer'] : '' ,
 		'point' => $_POST['point']);
+	if( $_POST['question_id'] == 14 && strpos($_POST['answer'],"know our numbers"))
+	{
+		// Skip to question 20 if question 14 select answer 2
+		$question_id = 20 ;
+	} else {
+		$question_id = $_POST['question_id'] + 1; // next question	
+	}
 	
-	$question_id = $_POST['question_id'] + 1; // next question
 	if( $question_id == 17 )
 	{
 		$numof_new_clients = !empty($_SESSION['result']['15']['answer']) ? $_SESSION['result']['15']['answer'] : 1;
@@ -141,7 +148,7 @@ include "footer.php";
 			}
 			
 			$("input[name='point']").val(point);
-			if( is_skip == 0 && answer.length < 1 )
+			if( is_skip === 0 && answer.length < 1 )
 			{
 				msg = type != 'text' ? "Please choose one option" : "Please input value";
 				alert(msg);

@@ -2,10 +2,11 @@
 ob_start();
 session_start();
 $point = 0;
-$answer_list = array(1,2,4,5,7,8,9,10,11,12,13);
+$answer_list = array(1,2,7,8,19);
 //include "$root/survey/test/header.php";
 // include_once "header.php";
-include_once 'answer.php';?>
+include_once 'answer.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,24 +17,6 @@ include_once 'answer.php';?>
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script type="text/javascript" src='js/jquery.min.js'></script>
     <script type="text/javascript" src='js/bootstrap.min.js'></script>
-    <style>
-    #resultbox{
-        padding : 10px 5px;
-    }
-
-    .question {
-        font-weight: bold;
-        line-height: 19px;
-        padding-left: 10px;
-    }
-
-    .answer {
-        background-color: #f9f9f9;
-        border: 1px solid #f0f0f0;
-        margin-bottom: 20px;
-        padding: 10px;
-    }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -52,20 +35,59 @@ include_once 'answer.php';?>
                     <strong>How Otto</strong> can help you get <strong>more client</strong>
                 </h3>
                 <?php if(isset($_SESSION['result'])): ?>
-                    <?php foreach($_SESSION['result'] as $i => $result): $point += $result['point'];?>
-                    <?php if(in_array($i, $answer_list)):?>
-                    <div class="question"><img src='images/question.gif'><?php echo $result['question'] ?></div>
-                    <div class="answer"><img src='images/answer.gif'><?php echo call_user_func('answer_'.$i,$result['answer']) ?></div>
+                    <!-- Answer Question 1 -->
+                    <?php if(!empty($_SESSION['result'][1])):
+                    $answer = answer_1($_SESSION['result'][1]['answer']);
+                    ?>
+                        <?php if(!empty($answer)):?>    
+                        <p><?php echo $answer?></p>
+                        <?php endif;?>
                     <?php endif;?>
-                    <?php endforeach; ?>
+
+                    <!-- Answer Question 19 -->
+                    <?php if(!empty($_SESSION['result'][19])):
+                    $answer = answer_19($_SESSION['result'][19]['answer']);
+                    ?>
+                        <?php if(!empty($answer)):?>
+                        <p><?php echo $answer?></p>
+                        <?php endif?>
+                    <?php endif;?>
+
+                    <!-- Answer Question 2 -->
+                    <?php if(!empty($_SESSION['result'][2])):
+                    $answer = answer_2($_SESSION['result'][2]['answer']);
+                    ?>
+                        <?php if(!empty($answer)):?>
+                        <p><?php echo $answer?></p>
+                        <?php endif?>
+                    <?php endif;?>
+
+                    <!-- Answer Question 7 -->
+                    <?php if(!empty($_SESSION['result'][7])):
+                    $answer = answer_7($_SESSION['result'][7]['answer']);
+                    ?>
+                        <?php if(!empty($answer)):?>
+                        <p><?php echo $answer?></p>
+                        <?php endif?>
+                    <?php endif;?>
+
+                    <!-- Answer Question 8 -->
+                    <?php if(!empty($_SESSION['result'][8])):
+                    $answer = answer_8($_SESSION['result'][8]['answer']);
+                    ?>
+                        <?php if(!empty($answer)):?>
+                        <p><?php echo $answer?></p>
+                        <?php endif?>
+                    <?php endif;?>
                 <?php endif;?>
                 <p>Total point : <strong><?php echo $point;?></strong></p>
             </div>
+            <!-- 
             <div class="col-md-7 column" style="border: solid">
                 <dl>
-                    <dt>Enligt forskning</dt>
+                    <dt>Research shows</dt>
                     <dd>
-                        Enligt Forrester Research så skulle din kundanskaffningskostnad minska med 33%, vilket skulle spara just er ca 0 om ni använder er av Marketing Automation.<br><br>
+                        According to Forrester Research your customer acquisition cost would be reduced by 33% which would save you approximately 0 by using Marketing Automation..<br><br>
                         Det gör samtidigt att ni ökar er marknadsföringsbudget för att nå fler så att ni har 0 mer att röra er med. <br><br>
                         Gartner Group och CSO Insights säger att det går att spara 0 redan inom 6-9 månader. <br><br>
                         Något som vi själva tror starkt på, men också tror är lite mer bransch/tjänsteberoende är att vi har sett att order-värden generellt har ökat när man använt Marketing Automation genom att köparen har kunnat få varje värde utbenat för sig. Ju mer komplex en affär är, ju högre ordervärden har vi sett. Annuitas group menar att det skulle leda till 47% högre ordervärde generellt, i ert fall innebär det att ni skulle tjäna 0 mer på högre ordervärden över ett år, utan att ta med ökad försäljning som MA också skulle leda till.
@@ -108,38 +130,31 @@ include_once 'answer.php';?>
                 </dl>
                 
             </div>
+            -->
         </div>
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <h3 class="text-primary">
                     For your organization, you should consider:
                 </h3>
-                <ol>
-                    <li>
-                        Lorem ipsum dolor sit amet
-                    </li>
-                    <li>
-                        Consectetur adipiscing elit
-                    </li>
-                    <li>
-                        Integer molestie lorem at massa
-                    </li>
-                    <li>
-                        Facilisis in pretium nisl aliquet
-                    </li>
-                    <li>
-                        Nulla volutpat aliquam velit
-                    </li>
-                    <li>
-                        Faucibus porta lacus fringilla vel
-                    </li>
-                    <li>
-                        Aenean sit amet erat nunc
-                    </li>
-                    <li>
-                        Eget porttitor lorem
-                    </li>
-                </ol>
+                <ul>
+                <?php if(!empty($_SESSION['result'])):?>
+                <?php foreach($_SESSION['result'] as $k => $result):?>
+                    <?php if(!in_array($k, $answer_list)):?>
+                        <?php 
+                        $answer = '';
+                        if(function_exists('answer_'.$k))
+                        {
+                            $answer = call_user_func('answer_'.$k,$result['answer']);
+                        }
+                        ?>
+                        <?php if(!empty($answer)):?>
+                            <li><?php echo $answer;?></li>
+                        <?php endif;?>
+                    <?php endif?>
+                <?php endforeach;?>
+                <?php endif;?>
+                </ul>
             </div>
         </div>
         <div class="row clearfix">

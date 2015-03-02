@@ -1,0 +1,12 @@
+package exam;
+
+public class TestIDCard {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		IDCard a = new IDCard("Dat","12345");
+		
+		System.out.println(a.toString());
+	}
+
+}

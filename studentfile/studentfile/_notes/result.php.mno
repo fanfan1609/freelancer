@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_classresult" value="name:student_id;datatype:int,name:attendance;datatype:int,name:class_name;datatype:string,name:student_name;datatype:string,name:term_name;datatype:string,name:Accounts;datatype:int,name:Agriculture;datatype:int,name:arts;datatype:int,name:Biology;datatype:int,name:Chemistry;datatype:int,name:Coloring;datatype:int,name:commerce;datatype:int,name:Computer;datatype:int,name:Drawing;datatype:int,name:Economics;datatype:int,name:English;datatype:int,name:French;datatype:int,name:Geography;datatype:int,name:Government;datatype:int,name:percent;datatype:int,name:average;datatype:int,name:min;datatype:int,name:maxa;datatype:int,name:ranking;datatype:int" />
+</info>

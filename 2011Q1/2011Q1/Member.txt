@@ -1,0 +1,75 @@
+import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
+
+public class Member extends ClubMember implements Serializable 
+{
+	private String name;
+	private Date subDate;
+	private boolean subPaid;
+	
+	public Member(String name, Date subDate, boolean subPaid)
+	{
+		this.name = name;
+		this.subDate = subDate;
+		this.subPaid = subPaid;
+	}
+	
+	public Member(String name)
+	{
+		this.name = name;
+		this.subDate = Calendar.getInstance().getTime();
+		this.subPaid = false;
+	}
+
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public void setDate(Date subDate)
+	{
+		this.subDate = subDate;
+	}
+	
+	
+	public void setSubPaid()
+	{
+		this.subPaid = true;
+	}
+	
+	public boolean isSubDue()
+	{
+//		if(this.subPaid == false)
+//		{
+//			return true;
+//		}
+//		else 
+//		{
+//			return false;
+//		}
+		
+		
+		return !this.subPaid;
+	}
+	
+	
+	//Override the toString() (i.e. Write a human readable version!)
+	public String toString()
+	{
+		String outputString = this.name + " "+this.subDate+" "+this.subPaid;
+		return outputString;
+	}
+
+	
+	public void print()
+	{
+		System.out.println(this.toString());
+	}
+}
+

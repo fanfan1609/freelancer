@@ -1,0 +1,48 @@
+package exam;
+
+import java.util.ArrayList;
+
+public class BankAccount implements Measureable {
+	
+	public static final double RATE = 0.045;
+	protected String ID;
+	protected String name;
+	protected double balance;
+	
+	public BankAccount(){
+		ID = "";
+		name = "";
+		balance = 0;
+	}
+	
+	
+	public BankAccount(String id, String n, double b){
+		ID = id;
+		name = n;
+		balance = b;
+	}
+	
+	public double getMeasure(){
+		return balance;
+	}
+	
+	public void deposit(double money){
+		balance += money;
+	}
+	
+	public void withdraw(double money){
+		if( money >= balance ){
+			balance = 0;
+		} else {
+			balance -= money;
+		}
+	}
+	
+	public String getID(){
+		return ID;
+	}
+	
+	public String showBalance(){
+		return "User " + name + " has balance" + balance;
+	}
+}

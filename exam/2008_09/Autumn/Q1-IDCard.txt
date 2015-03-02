@@ -1,0 +1,28 @@
+package exam;
+
+public class IDCard extends Card {
+	private String IDNumber;
+	private String IDName;
+	
+	public IDCard(){
+		IDName 		= "";
+		IDNumber 	= "";
+	}
+	
+	public IDCard(String name, String number){
+		IDNumber 	= number;
+		IDName		= name;
+	}
+	
+	public String getName(){
+		return IDName;
+	}
+	
+	public String getIdNumber(){
+		return IDNumber;
+	}
+	
+	public String toString(){
+		return "Carholder: " + IDName + "\nID :" +IDNumber;
+	}
+}

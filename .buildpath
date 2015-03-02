@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="combine_4_11"/>
+	<buildpathentry kind="src" path="combine_new"/>
+	<buildpathentry kind="src" path="removeDuplicate"/>
+	<buildpathentry kind="src" path="studentfile/studentfile"/>
+	<buildpathentry kind="lib" path="combine_6_11.zip"/>
+	<buildpathentry kind="lib" path="studentfile.zip"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>

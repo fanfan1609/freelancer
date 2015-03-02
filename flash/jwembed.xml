@@ -1,0 +1,10 @@
+<config>
+ <backcolor>444444</backcolor>
+ <frontcolor>ffcc00</frontcolor>
+ <screencolor>000000</screencolor>
+ <controlbar>over</controlbar>
+ <bufferlength>5</bufferlength>
+ <autostart>false</autostart>
+ <logo></logo>
+ <link></link>
+</config>

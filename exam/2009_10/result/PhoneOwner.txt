@@ -1,0 +1,14 @@
+package exam;
+
+import java.util.ArrayList;
+
+public class PhoneOwner {
+	private String ownerString;
+	private ArrayList<ContactDetail> contactList;
+	
+	public PhoneOwner(){
+		
+	}
+	
+	public void addContact( Phone)
+}
