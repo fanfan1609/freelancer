@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Feb 16, 2015 at 04:09 PM
--- Server version: 5.5.41-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.5
+-- Host: 127.0.0.1
+-- Generation Time: Mar 03, 2015 at 06:47 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `survey`
 --
+CREATE DATABASE IF NOT EXISTS `survey` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `survey`;
 
 -- --------------------------------------------------------
 
@@ -190,7 +192,7 @@ INSERT INTO `questions` (`id`, `content`, `is_skippable`, `is_deleted`, `type`, 
 (16, 'How much profit does one customer bring on average over its time as a ', 1, 0, 'text', ''),
 (17, 'Fill in your customer acquisition cost:', 1, 0, 'text', ''),
 (18, 'If B2B, or dealing only with B2B: who are your primarily customers?', 1, 0, 'radio', ''),
-(19, 'In which Industry would you say you primarily work?', 0, 0, 'select', '');
+(19, 'In which Industry would you say you primarily work?', 1, 0, 'select', '');
 
 -- --------------------------------------------------------
 

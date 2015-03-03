@@ -84,7 +84,7 @@ if( $question ) // Still has question
 				question17();
 			}
 		?>
-		<input  id='btnValidate'  type='submit' value='Nästa&raquo;'/>
+		<input  id='btnValidate'  type='submit' value='NEXT'/>
 	</form>
 <?php endif;?>
 </div>

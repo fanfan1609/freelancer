@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 $point = 0;
-$answer_list = array(1,2,7,8,19);
+$answer_list = array(1,2,6,7,8,19);
 //include "$root/survey/test/header.php";
 // include_once "header.php";
 include_once 'answer.php';
@@ -14,6 +14,7 @@ include_once 'answer.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sonician-Survey Result</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script type="text/javascript" src='js/jquery.min.js'></script>
     <script type="text/javascript" src='js/bootstrap.min.js'></script>
@@ -139,20 +140,27 @@ include_once 'answer.php';
                 </h3>
                 <ul>
                 <?php if(!empty($_SESSION['result'])):?>
-                <?php foreach($_SESSION['result'] as $k => $result):?>
-                    <?php if(!in_array($k, $answer_list)):?>
-                        <?php 
-                        $answer = '';
-                        if(function_exists('answer_'.$k))
+                    <?php foreach($_SESSION['result'] as $k => $result):?>
+                        <?php if(!in_array($k, $answer_list)):?>
+                            <?php 
+                            $answer = '';
+                            if(function_exists('answer_'.$k))
+                            {
+                                $answer = call_user_func('answer_'.$k,$result['answer']);
+                            }
+                            ?>
+                            <?php if(!empty($answer)):?>
+                                <li><?php echo $answer;?></li>
+                            <?php endif;?>
+                        <?php endif?>
+                    <?php endforeach;?>
+                    <?php 
+                        $a_6 = answer_6($_SESSION['result']['6']['answer']);
+                        if( $a_6 )
                         {
-                            $answer = call_user_func('answer_'.$k,$result['answer']);
+                            echo "<p>" . $a_6 . "</p>";
                         }
-                        ?>
-                        <?php if(!empty($answer)):?>
-                            <li><?php echo $answer;?></li>
-                        <?php endif;?>
-                    <?php endif?>
-                <?php endforeach;?>
+                    ?>
                 <?php endif;?>
                 </ul>
             </div>

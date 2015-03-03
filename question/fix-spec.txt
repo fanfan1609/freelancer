@@ -1,0 +1,60 @@
+1) UTF-8 unicode ci is the collation in the database, we use in Otto, so it seems it should be the same? // DONE
+
+2) Question id 6 only has one answer leading up to a result, but this should be placed among the paragraphs and not the bullet points as well.  // DONE
+
+3) Most (hopefully all) the bullets now has a font-awesome icon class connected to it. There is a need to create new classes: 
+	a) with names fablue, fagreen, faorange, fared, faindigo, fayellow, fapurple, one for each color, but likely a little darker than the originals (if #ffff00 can be seen as original) in order to make it possible to see them better, e.g. perhaps #cccc00 for yellow etc. 
+	b) AND, they should be perhaps font-size:1.5em; to make it easier to see them as bullets, and 
+	c) made to text-indent negatively for the top row or first-letter such that the font-icon pops out to the front like as if that was the bullet instead. 
+	d) The disc-style bullets can be removed then.
+
+4) In question-id 9, instead of "Rank: What is more important for you in the acquisition of customers? " write out: "What are the three (3) most important areas for you?"
+
+5) In all questions with input type text boxes in the middle of the text, remove the [ and ] before and after.
+
+6) Questions nr 3, 18 or 19 should not be shown (and hence not the answers either).
+
+7) Question nr 10 has two answers that should be changed slightly: 
+	a) the anwer "I use it, but would like to get more out of it." should be changed to: "I already use your system Otto, but would like to know more to get more out of it.", and
+	b) the answer "I know it fairly well, and use it regularly." should be changed to: "I already use another Marketing Automation system"
+
+8) I have updated almost all the texts of the resulting answers and added e.g. these font-awesome icons to be used instead of the bullets. They now come in a new column in the spread-sheet (column I). If no answer should be shown at all, I've put N/A where there may previously have been an answer (that should be deleted).
+
+9) On the results-page, it now says
+
+10) The submit-button now says "NÄSTA" whereas it should say "NEXT" in English
+
+11) Take away the answer-id "Other (please specify) " from question id 5 (answer id 30) 
+
+12) Now you can't use the browser button to step back while taking the test
+
+13) It does not work to have pre-checked radio-buttons or checkboxes, so there needs to be a control checking that at least one answer is selected. 
+
+14) Answer-id 55 of question id 11 should be "Yes, Vendemore" instead of "Yes, Jajja"
+
+15) To simplify question 14, let's throw around the order of the two alternatives.
+
+16) Question-id 16 has a missing word at the end, make it: "How much profit does one customer bring on average over its time as a client?"
+
+17) For Question-id 17, the checkbox for "…or calculate it with:" shouldn't be checked from the start. And to make it clearer, the wording: "…or calculate it with:" should rather be: "Click here if you don't know your customer acquisition cost and need help to calculate it."
+
+18) Again if question-id 17 has the answer NaN, it should require the user to fill in EITHER the Client Acquisition Cost (CAC) or to fill in the other fields to calculate a CAC.
+
+19) On the results page, combine: "Show your result below (as your answer)" and " How Otto can help you get more client " to become "<h1>How Otto can help you get more clients<br>&ndash;Based on your individual answers</h1>"
+
+20) Instead of the title before the bullets that is now: "For your organization, you should consider: ", write rather: "<h2>Otto&reg; will particularly help you with:</h2>
+
+21) I realize a particular users' answers may mean different amount of bullets are to be shown and with different amount of texts, but it would look better if at least the bullet points are put up in two columns of the page, right? 
+
+22) Points should not be printed out on the results-sheet, but will help define three calls to actions:
+
+A: For points under 15 AND answer to question-id 10 is either 48, 49 or 50, show image with two drawn blue colored arrows pointing to two options: 
+	a) Buy now (as a big button that should go to https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean )
+	b) Join our webinar (with the code as below)
+	
+B: For points over 15 AND answers to question-id 10 is either 48, 49, 50 OR 51, then show three arrows pointing at the two options above, PLUS:	
+	
+	c) Book personal demo (also big button like buy now going to http://www.sonician.com/en/event-timeslots)
+	
+C: For those who answered question-id 10 with answer-id 52, just show the option c) Book personal demo
+
