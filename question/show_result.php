@@ -25,16 +25,13 @@ include_once 'answer.php';
             <div class="col-md-12 column">
                 <div class="page-header">
                     <h1>
-                        Show your result below <small>(as your answer)</small>
+                        How Otto can help you get more clients<br>&ndash;Based on your individual answers
                     </h1>
                 </div>
             </div>
         </div>
         <div class="row clearfix">
             <div class="col-md-5 column">
-                <h3 class="text-primary">
-                    <strong>How Otto</strong> can help you get <strong>more client</strong>
-                </h3>
                 <?php if(isset($_SESSION['result'])): ?>
                     <!-- Answer Question 1 -->
                     <?php if(!empty($_SESSION['result'][1])):
@@ -135,9 +132,9 @@ include_once 'answer.php';
         </div>
         <div class="row clearfix">
             <div class="col-md-12 column">
-                <h3 class="text-primary">
-                    For your organization, you should consider:
-                </h3>
+                <h2 class="text-primary">
+                    Otto&reg; will particularly help you with:
+                </h2>
                 <ul>
                 <?php if(!empty($_SESSION['result'])):?>
                     <?php foreach($_SESSION['result'] as $k => $result):?>

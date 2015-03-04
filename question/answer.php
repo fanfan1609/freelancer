@@ -240,7 +240,7 @@ function answer_11($answer)
 	$output = '';
 	switch (trim($answer)) {
 		case "No, and since we mainly have consumers or small businesses, I don’t think it’s applicable for me.":
-			$output = "<i class='fa fa-cogs fagrey'></i>Don't do a mistake by thinking that the Otto concept doesn't work for you who work with small businesses or consumers, we have clients in the same situation that bases their entire sales process on Otto and it works great! ";
+			$output = "";
 			break;
 		case 'No, but it might be useful for us to get more leads.':
 			$output = "<i class='fa fa-play-circle-o fapurple'></i> <b>IP-tracking:</b> With Otto you can have web-site visitors from business organizations written directly into Otto, and you have three choices to start to communicate with the individuals behind your web-visits: <br>
@@ -248,18 +248,26 @@ function answer_11($answer)
 				ii) Let Softtalk call and find out who to talk to, or<br>
 				iii) Automatically read contact details with e-mail addresses to leading company officials from Bisnode so you can automatically start communicating with them.";
 			break;
-		case "Yes, Enecto ProspectFinder":
+		case 'Yes, Vendemore':
 			$output = "<i class='fa fa-play-circle-o fapurple'></i> <b>IP-tracking:</b> Since you already use Vendemore, you should know that there's a direct integration with Otto&reg; such that your web-site visitors can be written directly into Otto, and you have three choices to read in which individuals would be behind your web-visits: <br>
 					i) call and find out yourself, <br>
 					ii) Let Softtalk call and find out who to talk to, or<br>
 					iii) Automatically read contact details with e-mail addresses to leading company officials from Bisnode so you can automatically start communicating with them.";
 			break;
-		case "":
-			$output = "<i class='fa fa-play-circle-o fapurple' ></i> <b>IP-tracking:</b> Since you already use Vendemore, you should know that there's a direct integration with Otto&reg; such that your web-site visitors can be written directly into Otto, and you have three choices to read in which individuals would be behind your web-visits: <br>
-				i) call and find out yourself, <br>
-				ii) Let Softtalk call and find out who to talk to, or<br>
-				iii) Automatically read contact details with e-mail addresses to leading company officials from Bisnode so you can automatically start communicating with them."
+		case "Yes, Enecto ProspectFinder":
+			$output = "<i class='fa fa-play-circle-o fapurple'></i> <b>IP-tracking:</b> Since you already use Enecto ProspectFinder, you should know that there's a direct integration with Otto&reg; such that your web-site visitors can be written directly into Otto, and you have three choices to read in which individuals would be behind your web-visits: <br>
+					i) call and find out yourself, <br>
+					ii) Let Softtalk call and find out who to talk to, or<br>
+					iii) Automatically read contact details with e-mail addresses to leading company officials from Bisnode so you can automatically start communicating with them.";
+			break;
+		case "Yes, Apsis/ProspectEye":
+			$output = "<i class='fa fa-play-circle-o fapurple' ></i> <b>IP-tracking:</b> Since you use ProspectEye now, you today have to follow up all web-site visitors yourself without knowing if it's really a sales qualified lead yet. If you would use Otto instead, you would also get the options to:<br>
+					i) Let Softtalk call and find out who to talk to in order to sales qualify your leads, or<br>
+					ii) Automatically read contact details with e-mail addresses to leading company officials from the Bisnode database so you can automatically start communicating with them.";
 		default:
+			$output = "<i class='fa fa-play-circle-o fapurple'></i> <b>IP-tracking:</b> Since you already use it, you know that you today have to follow up all web-site visitors yourself without knowing if it's really a sales qualified lead yet. If you would use Otto instead, you would also get the options to:<br>
+					i) Let Softtalk call and find out who to talk to in order to sales qualify your leads, or<br>
+					ii) Automatically read contact details with e-mail addresses to leading company officials from the Bisnode database so you can automatically start communicating with them.";
 			break;
 	}
 	return $output;
@@ -270,24 +278,24 @@ function answer_12($answer)
 	$output = '';
 	switch (trim($answer)) {
 		case "No, but we may start to.":
-			$output = "From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 4 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
+			$output = "<i class='fa fa-envelope-o fablue'></i> <b>Newsletters:</b> From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 4 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
 			break;
 		case 'Yes, we use Outlook to do it.':
-			$output = "From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 4 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
+			$output = "<i class='fa fa-envelope-o fablue'></i> <b>Newsletters:</b> From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 3 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
 			break;
 		case "Yes, we use our CRM-system to do it.":
-			$output = "From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 4 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
+			$output = "<i class='fa fa-envelope-o fablue' ></i> <b>Newsletters:</b> From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 3 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script). You could then write the action activity to your CRM-system such that you keep all data in one place.";
 			break;
 		case 'Yes, we use Apsis to do it.':
-			$output = "From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 4 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
+			$output = "<i class='fa fa-envelope-o fablue'></i> <b>Newsletters:</b> From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 4 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
 			break;
 		case 'Yes, we use Mailchimp to do it.':
-			$output = "From Otto&reg; you could send Newsletters as well, but more importantly, at least three clients have tried it against Mailchimp and found 4-5 times better action due to each mail being built and sent one-by-one from Otto with the real e-mail of one (or many) senders to the contacts of each as if it was sent directly from Outlook. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
+			$output = "<i class='fa fa-envelope-o fablue'></i> <b>Newsletters:</b> From Otto&reg; you could send Newsletters as well, but more importantly, at least three clients have tried it against Mailchimp and found 4-5 times better action due to each mail being built and sent one-by-one from Otto with the real e-mail of one (or many) senders to the contacts of each as if it was sent directly from Outlook. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
 			break;
 		default:
 			if(strpos($answer, 'Yes, we use another system'))
 			{
-				$output = "From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 4 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
+				$output = "<i class='fa fa-envelope-o fablue'></i> <b>Newsletters:</b> From Otto&reg; you could send Newsletters as well, but more importantly, you'll be able to send e-mails from all users' personal e-mail addresses to all their contacts just as if each user would have sent it directly from Outlook themselves and still one person could write the e-mail instead of each of 4 users. Or instead of a 1000. Even the links are more inviting to click, since they'll go directly to your site (but will still be trackable with the Otto tracking script).";
 			}
 			break;
 	}
@@ -298,28 +306,34 @@ function answer_13($answer)
 {
 	$output = '';
 	switch (trim($answer)) {
+		case "We used to, but we don’t use it any more.":
+			$output = "<i class='fa fa-briefcase faorange'></i> <b>CRM:</b> Many CRM-systems are cumbersome for the sales representatives and can't be used for bulk-handling of contacts for marketing purposes at all. Otto will allow you to do <i>both</i> the bulk-handling, and it also allows for a very fast and effective one-by-one handling as a CRM-system if you would like to use it that way.";
+			break;
+		case "No, but we’re thinking of using one.":
+			$output = "<i class='fa fa-briefcase faorange'></i> <b>CRM:</b> Many CRM-systems are cumbersome for the sales representatives and can't be used for bulk-handling of contacts for marketing purposes at all. Since Otto will allow you to do <i>both</i> the bulk-handling <i>and</i> the one-by-one handling in a very fast and efficient way, we suggest you try it out as a CRM-system as well.";
+			break;
 		case "Yes, we use Salesforce.":
-			$output = "<strong>Salesforce</strong> Integration: You can easily integrate Salesforce directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Salesforce.";
+			$output = "<i class='fa fa-briefcase faorange'></i> <b>Salesforce CRM Integration:</b> You can easily integrate Salesforce directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Salesforce.";
 			break;
 		case 'Yes, we use Microsoft Dynamics.':
-			$output = "<strong>Microsoft Dynamics CRM</strong> Integration: You can easily integrate Dynamics directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Dynamics.";
+			$output = "<i class='fa fa-briefcase faorange'></i> <b>Microsoft Dynamics CRM Integration:</b> You can easily integrate Dynamics directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Dynamics.";
 			break;
 		case "Yes, we use SugarCRM.":
-			$output = "<strong>SugarCRM</strong> Integration: You can easily integrate SugarCRM directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in SugarCRM";
+			$output = "<i class='fa fa-briefcase faorange'></i> <b>SugarCRM Integration:</b> You can easily integrate SugarCRM directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in SugarCRM.";
 			break;
 		case 'Yes, we use SuperOffice.':
-			$output = "<strong>Superoffice</strong> Integration: You can easily integrate Superoffice directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Superoffice.";
+			$output = "<i class='fa fa-briefcase faorange'></i> <b>Superoffice Integration:</b> You can easily integrate Superoffice directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Superoffice.";
 			break;
 		case 'Yes, we use Lundalogik.':
-			$output = "<strong>Lundalogik</strong> Integration: You can easily integrate Lundalogik directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Lundalogik.";
+			$output = "<i class='fa fa-briefcase faorange'></i> <b>Lundalogik Integration:</b> You can easily integrate Lundalogik directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Lundalogik.";
 			break;
 		case 'Yes, we use Upsales':
-			$output = '<strong>Upsales</strong> Integration: You can easily integrate Upsales directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Upsales. ';
+			$output = '<i class="fa fa-briefcase faorange"></i> <b>Upsales Integration:</b> You can easily integrate Upsales directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in Upsales. ';
 			break;
 		default:
 			if(strpos($answer, 'Yes, we use'))
 			{
-				$output = "<strong>CRM</strong> Integration: You can easily integrate your CRM-system directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in the CRM.";
+				$output = "<i class='fa fa-briefcase faorange'></i> <b>CRM Integration:</b> You can easily integrate your CRM-system directly with Otto so you can do all bulk-handling in Otto for the Marketing while sales representatives continue to work in the CRM. Since Otto also has some one-by-one functionality, you may even want to try out how well just Otto does for you!";
 			}
 			break;
 	}

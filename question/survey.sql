@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 03, 2015 at 06:47 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.16
+-- Host: localhost
+-- Generation Time: Mar 04, 2015 at 06:58 PM
+-- Server version: 5.5.41-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `survey`
 --
-CREATE DATABASE IF NOT EXISTS `survey` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `survey`;
 
 -- --------------------------------------------------------
 
@@ -71,7 +69,7 @@ INSERT INTO `answers` (`id`, `question_id`, `content`, `point`, `is_deleted`) VA
 (27, 5, 'More on-line advertizing (Google Adwords, Facebook, LinkedIn, Media houses)', 2, 0),
 (28, 5, 'More ads in trade magazines\r\n', 2, 0),
 (29, 5, 'More ads in (daily) newspapers\r\n', 0, 0),
-(30, 5, 'Other (please specify)\r\n', 0, 0),
+(30, 5, 'Other (please specify)\r\n', 0, 1),
 (31, 6, 'I work alone\r\n', -5, 0),
 (32, 6, 'We are < 5 who work with sales and marketing', 5, 0),
 (33, 6, 'We are more who work with sales and marketing\r\n', 5, 0),
@@ -92,21 +90,21 @@ INSERT INTO `answers` (`id`, `question_id`, `content`, `point`, `is_deleted`) VA
 (48, 10, 'Don’t know much, but would like to know more about it.', 1, 0),
 (49, 10, 'Have heard about it, and would like to know more about how it could work for us.', 3, 0),
 (50, 10, 'I understand the principle behind the process or systems, and have some ideas about how to use it, but haven’t started yet.\n', 25, 0),
-(51, 10, 'I use it, but would like to get more out of it.\r\n', 5, 0),
-(52, 10, 'I know it fairly well, and use it regularly.\r\n', 0, 0),
+(51, 10, 'I already use your system Otto, but would like to know more to get more out of it.', 5, 0),
+(52, 10, 'I already use another Marketing Automation system', 0, 0),
 (53, 11, 'No, and since we mainly have consumers or small businesses, I don’t think it’s applicable for me.\n', -5, 0),
 (54, 11, 'No, but it might be useful for us to get more leads.\r\n', 5, 0),
-(55, 11, 'Yes, Jajja', 0, 0),
+(55, 11, 'Yes, Vendemore', 0, 0),
 (56, 11, 'Yes, Enecto ProspectFinder\r\n', 25, 0),
 (57, 11, 'Yes, Apsis/ProspectEye\r\n', 10, 0),
-(58, 11, 'Yes, other:[blank_text]', 10, 0),
+(58, 11, 'Yes, other:blank_text', 10, 0),
 (59, 12, 'No, and we don’t need to.\r\n', -5, 0),
 (60, 12, 'No, but we may start to.\r\n', 10, 0),
 (61, 12, 'Yes, we use Outlook to do it.\r\n', 10, 0),
 (62, 12, 'Yes, we use our CRM-system to do it.\r\n', -5, 0),
 (63, 12, 'Yes, we use Apsis to do it.\r\n', 5, 0),
 (64, 12, 'Yes, we use Mailchimp to do it.\r\n', 5, 0),
-(65, 12, 'Yes, we use another system: [blank_text] to do it. \r\n', 0, 0),
+(65, 12, 'Yes, we use another system: blank_text to do it. \n', 0, 0),
 (66, 13, 'No, and we don’t need one.', 5, 0),
 (67, 13, 'We used to, but we don’t use it any more.\r\n', 10, 0),
 (68, 13, 'No, but we’re thinking of using one.\r\n', 20, 0),
@@ -116,12 +114,12 @@ INSERT INTO `answers` (`id`, `question_id`, `content`, `point`, `is_deleted`) VA
 (72, 13, 'Yes, we use SuperOffice.', 5, 0),
 (73, 13, 'Yes, we use Lundalogik.\r\n', 5, 0),
 (74, 13, 'Yes, we use Upsales\r\n', -10, 0),
-(75, 13, 'Yes, we use [blank_text]', 10, 0),
+(75, 13, 'Yes, we use blank_text', 10, 0),
 (76, 14, 'I know at least roughly my Marketing & Sales costs, what a client brings on average, and the number of clients we get in a year and would like to get a more specific answer based on my own numbers the research of Forrester Research, Gartner group etc.\r\n', 5, 0),
 (77, 14, 'I don’t know our numbers, or I don’t want such a specific response, so just take me to the results so far.\r\n', -10, 0),
-(78, 15, '[blank_text] e.g. 100 ', 0, 0),
-(80, 16, '[blank_text] e.g. 100 000 ', 0, 0),
-(81, 17, '[blank_text] e.g. 50 000', 0, 0),
+(78, 15, 'blank_text e.g. 100 ', 0, 0),
+(80, 16, 'blank_text e.g. 100 000 ', 0, 0),
+(81, 17, 'blank_text e.g. 50 000', 0, 0),
 (82, 18, 'Not applicable for us… (CHECKED)\r\n', 0, 0),
 (83, 18, 'Marketing & Sales Executives\r\n', 0, 0),
 (84, 18, 'Development Executives\r\n', 0, 0),
@@ -130,7 +128,7 @@ INSERT INTO `answers` (`id`, `question_id`, `content`, `point`, `is_deleted`) VA
 (87, 18, 'CFOs / Controllers\r\n', 0, 0),
 (88, 18, 'The Board\r\n', 0, 0),
 (89, 18, 'Office Managers\r\n', 0, 0),
-(90, 18, 'Others: [blank_text]\r\n', 0, 0),
+(90, 18, 'Others: blank_text', 0, 0),
 (91, 19, 'A: Agriculture, forestry and fishing', -5, 0),
 (92, 19, 'B: Mining and quarrying', -5, 0),
 (93, 19, 'C: Manufacturing', 5, 0),
@@ -182,14 +180,14 @@ INSERT INTO `questions` (`id`, `content`, `is_skippable`, `is_deleted`, `type`, 
 (6, 'How many sales reps or marketers are you?', 0, 0, 'radio', ''),
 (7, 'We see most organizations tend to do sales themselves, but often outsource marketing work. Do you', 0, 0, 'radio', ''),
 (8, 'How well-known are you among your potential customers ?', 0, 0, 'radio', ''),
-(9, 'Rank: What is more important for you in the acquisition of customers? ', 0, 0, 'checkbox', ''),
+(9, 'What are the three (3) most important areas for you?', 0, 0, 'checkbox', ''),
 (10, 'How well do you know Marketing Automation ?', 0, 0, 'radio', ''),
 (11, 'Do you have an IP-tracker solution to find out which are the businesses behind your web-site visitors’ IP-addresses, now when Google Analytics is not providing the info anymore?', 0, 0, 'radio', ''),
 (12, 'Do you send newsletters?', 0, 0, 'radio', ''),
 (13, 'Do you have a CRM (Customer Relationship Management) system?', 0, 0, 'radio', ''),
 (14, 'If you’d like the test-result to be more specific, you have two choices:', 0, 0, 'radio', ''),
 (15, 'How many customers did you approximately get  last year?', 1, 0, 'text', 'Currency?\r\nDon’t write any currency like $, kr, € or £. Just use the same for all questions, and the response will be in this currency as well.'),
-(16, 'How much profit does one customer bring on average over its time as a ', 1, 0, 'text', ''),
+(16, 'How much profit does one customer bring on average over its time as a client?', 1, 0, 'text', ''),
 (17, 'Fill in your customer acquisition cost:', 1, 0, 'text', ''),
 (18, 'If B2B, or dealing only with B2B: who are your primarily customers?', 1, 0, 'radio', ''),
 (19, 'In which Industry would you say you primarily work?', 1, 0, 'select', '');

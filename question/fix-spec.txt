@@ -8,41 +8,41 @@
 	c) made to text-indent negatively for the top row or first-letter such that the font-icon pops out to the front like as if that was the bullet instead. 
 	d) The disc-style bullets can be removed then.
 
-4) In question-id 9, instead of "Rank: What is more important for you in the acquisition of customers? " write out: "What are the three (3) most important areas for you?"
+4) In question-id 9, instead of "Rank: What is more important for you in the acquisition of customers? " write out: "What are the three (3) most important areas for you?" // DONE
 
-5) In all questions with input type text boxes in the middle of the text, remove the [ and ] before and after.
+5) In all questions with input type text boxes in the middle of the text, remove the [ and ] before and after. // DONE
 
 6) Questions nr 3, 18 or 19 should not be shown (and hence not the answers either).
 
-7) Question nr 10 has two answers that should be changed slightly: 
+7) Question nr 10 has two answers that should be changed slightly: // DONE
 	a) the anwer "I use it, but would like to get more out of it." should be changed to: "I already use your system Otto, but would like to know more to get more out of it.", and
 	b) the answer "I know it fairly well, and use it regularly." should be changed to: "I already use another Marketing Automation system"
 
-8) I have updated almost all the texts of the resulting answers and added e.g. these font-awesome icons to be used instead of the bullets. They now come in a new column in the spread-sheet (column I). If no answer should be shown at all, I've put N/A where there may previously have been an answer (that should be deleted).
+8) I have updated almost all the texts of the resulting answers and added e.g. these font-awesome icons to be used instead of the bullets. They now come in a new column in the spread-sheet (column I). If no answer should be shown at all, I've put N/A where there may previously have been an answer (that should be deleted). // DONE
 
 9) On the results-page, it now says
 
-10) The submit-button now says "NÄSTA" whereas it should say "NEXT" in English
+10) The submit-button now says "NÄSTA" whereas it should say "NEXT" in English // DONE
 
-11) Take away the answer-id "Other (please specify) " from question id 5 (answer id 30) 
+11) Take away the answer-id "Other (please specify) " from question id 5 (answer id 30)  // DONE
 
 12) Now you can't use the browser button to step back while taking the test
 
 13) It does not work to have pre-checked radio-buttons or checkboxes, so there needs to be a control checking that at least one answer is selected. 
 
-14) Answer-id 55 of question id 11 should be "Yes, Vendemore" instead of "Yes, Jajja"
+14) Answer-id 55 of question id 11 should be "Yes, Vendemore" instead of "Yes, Jajja" // DONE
 
 15) To simplify question 14, let's throw around the order of the two alternatives.
 
-16) Question-id 16 has a missing word at the end, make it: "How much profit does one customer bring on average over its time as a client?"
+16) Question-id 16 has a missing word at the end, make it: "How much profit does one customer bring on average over its time as a client?" // DONE
 
 17) For Question-id 17, the checkbox for "…or calculate it with:" shouldn't be checked from the start. And to make it clearer, the wording: "…or calculate it with:" should rather be: "Click here if you don't know your customer acquisition cost and need help to calculate it."
 
 18) Again if question-id 17 has the answer NaN, it should require the user to fill in EITHER the Client Acquisition Cost (CAC) or to fill in the other fields to calculate a CAC.
 
-19) On the results page, combine: "Show your result below (as your answer)" and " How Otto can help you get more client " to become "<h1>How Otto can help you get more clients<br>&ndash;Based on your individual answers</h1>"
+19) On the results page, combine: "Show your result below (as your answer)" and " How Otto can help you get more client " to become "<h1>How Otto can help you get more clients<br>&ndash;Based on your individual answers</h1>" // DONE
 
-20) Instead of the title before the bullets that is now: "For your organization, you should consider: ", write rather: "<h2>Otto&reg; will particularly help you with:</h2>
+20) Instead of the title before the bullets that is now: "For your organization, you should consider: ", write rather: "<h2>Otto&reg; will particularly help you with:</h2> // DONE
 
 21) I realize a particular users' answers may mean different amount of bullets are to be shown and with different amount of texts, but it would look better if at least the bullet points are put up in two columns of the page, right? 
 
