@@ -16,6 +16,7 @@ include_once 'answer.php';
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/color.css">
     <script type="text/javascript" src='js/jquery.min.js'></script>
     <script type="text/javascript" src='js/bootstrap.min.js'></script>
 </head>
@@ -80,26 +81,48 @@ include_once 'answer.php';
                 <?php endif;?>
                 <p>Total point : <strong><?php echo $point;?></strong></p>
             </div>
-            <!-- 
+            <?php if(!empty($_SESSION['result'][17])):
+                if (isset($_SESSION['result'][15])) $valueofclient = $_SESSION['result'][15]['answer'];
+                if (isset($_SESSION['result'][17])) $valuecac = $_SESSION['result'][17]['answer'];
+                if (isset($_SESSION['result'][16])) $numof_new_clients = $_SESSION['result'][16]['answer'];
+
+                if ($valuecac > 9000){
+                    $spent_on_new = $numof_new_clients * $valuecac;
+                    $save_on_new = number_format(1000 * round(0.33 * $spent_on_new/1000),0,","," ");
+                    $save_on_new2 = number_format(1000 * round(0.3725 * $spent_on_new/1000),0,","," ");
+                    $morebudget = number_format(1000 * round($spent_on_new * 0.5/1000),0,","," ");
+                    $savequick = number_format(1000 * round($spent_on_new * 0.2/1000),0,","," ");
+                    $ordervalueincrease = number_format(1000 * round($valueofclient * $numof_new_clients * 0.47/1000),0,","," ");
+                }
+                else
+                {
+                    $spent_on_new = $numof_new_clients * $valuecac;
+                    $save_on_new = number_format(10 * round(0.33 * $spent_on_new/10),0,","," ");
+                    $save_on_new2 = number_format(10 * round(0.3725 * $spent_on_new/10),0,","," ");
+                    $morebudget = number_format(10 * round($spent_on_new * 0.5/10),0,","," ");
+                    $savequick = number_format(10 * round($spent_on_new * 0.2/10),0,","," ");
+                    $ordervalueincrease = number_format(10 * round($valueofclient * $numof_new_clients * 0.47/10),0,","," ");
+                };
+            ?> 
             <div class="col-md-7 column" style="border: solid">
                 <dl>
                     <dt>Research shows</dt>
                     <dd>
-                        According to Forrester Research your customer acquisition cost would be reduced by 33% which would save you approximately 0 by using Marketing Automation..<br><br>
-                        Det gör samtidigt att ni ökar er marknadsföringsbudget för att nå fler så att ni har 0 mer att röra er med. <br><br>
-                        Gartner Group och CSO Insights säger att det går att spara 0 redan inom 6-9 månader. <br><br>
-                        Något som vi själva tror starkt på, men också tror är lite mer bransch/tjänsteberoende är att vi har sett att order-värden generellt har ökat när man använt Marketing Automation genom att köparen har kunnat få varje värde utbenat för sig. Ju mer komplex en affär är, ju högre ordervärden har vi sett. Annuitas group menar att det skulle leda till 47% högre ordervärde generellt, i ert fall innebär det att ni skulle tjäna 0 mer på högre ordervärden över ett år, utan att ta med ökad försäljning som MA också skulle leda till.
+                        According to Forrester Research your customer acquisition cost would be reduced by 33% which would save you approximately <b><?php echo $save_on_new?></b> by using Marketing Automation.<br>
+                        That also means that you will increase your marketing budget with <b><?php echo $morebudget ?></b> which enables you to reach more people<br>
+                        Gartner Group and CSO Insights say that it is possible to save <b><?php echo $savequick ?></b> within the first 6-9 months. <br>
+                        Something that we strongly believe in but also think depends on the line of business/industry is that we have seen how order values generally increased as a result of using Marketing Automation. We have seen that the more complex a deal is, the higher are the order values. Anuuitas Group believes that it would lead to a generally 47% higher order value in your case, which means that you would earn <b><?php echo $ordervalueincrease?></b> more during a year. Observe that this calculation does not include the increased sales that Marketing Automation would lead to.<br>
                     </dd>
-                    <dt>Sonicians egna resultat</dt>
+                    <dt>Sonicians own results</dt>
                     <dd>
-                        Om det viktigaste sättet att nå nya kunder på är via mötesbokning och/eller kalla samtal, så stämmer siffrorna som Forrester Research säger rätt väl in på de effekter vi har sett på kunder som använder våra tjänster och Marketing Automation-systemet Otto®, även om vi nästan alltid sett en förbättring med ännu lite mer, i ert fall skulle det innebära ca 0 besparing om ni använder er av Marketing Automation.
+                        If the most important way to reach new costumers is through booking meetings and/or through cold calls, then the results from Forrester Research fits well with our observations of the effects at our clients that use our services and the Marketing Automation system named Otto®. In your case the use of our services would mean approximately <b><?php echo $save_on_new2?></b> in savings.<br>
                     </dd>
-                    <dt>Riktigt bra effekt på webbsidors konvertering till lead</dt>
+                    <dt>Great effects on website convertion to leads</dt>
                     <dd>
-                        Det finns inte lika mycket extern data på hur mycket mer leads man faktiskt kan få från webbsidor med hjälp av Marketing Automtion, men Aberdeen Group talar om 450% fler leads, Bull Solutions om 3ggr fler och själva har vi sett mellan 1,5 och 17ggr fler leads. För att ta fram data som gäller just för er behöver vi i så fall känna till mer om era antal besökare på webbsidan med mera.
+                        There is not much external information or dataon how much more leads you can actually get from websites using Marketing Automation but Aberdeen Group means speaks of a 450% increase, Bull Solutions speaks of 3 times more and we have ourselves seen between 150% to 1700% lead-increase. In order to obtain data on how your increase can be we need to know more about the number of visitors at your website and more.<br>
                     </dd>
                     <dt>
-                        Resultatet du får är ett uppskattat värde baserat på data från:
+                        The result you will get is estimated based on data from:
                     </dt>
                     <dd>
                         <div class="row clearfix">
@@ -126,16 +149,15 @@ include_once 'answer.php';
                         </div>
                     </dd>
                 </dl>
-                
             </div>
-            -->
         </div>
+        <?php endif;?>
         <div class="row clearfix">
             <div class="col-md-12 column">
-                <h2 class="text-primary">
+                <h3 class="text-primary">
                     Otto&reg; will particularly help you with:
-                </h2>
-                <ul>
+                </h3>
+                <ul class="optional">
                 <?php if(!empty($_SESSION['result'])):?>
                     <?php foreach($_SESSION['result'] as $k => $result):?>
                         <?php if(!in_array($k, $answer_list)):?>

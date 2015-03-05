@@ -2,13 +2,22 @@
 /**
  * Display answers as checkbox
  * @param  mixed $answers Answer list
+ * @param  boolean $is_back TRUE/FALSE
+ * @param  string $back_answer Old Answer
  * @return void
  */
-function showCheckBox($answers)
+function showCheckBox($answers,$is_back,$back_answer)
 {
+	$arr = array();
+	if( $is_back )
+	{
+		$arr = explode(",", $back_answer);
+	}
+	
 	foreach($answers as $answer )
 	{
-		echo "<input type='checkbox' class='answer' name='answer[]' data-point='".$answer['point']."' value='".$answer['content']."' >".$answer['content']."<br>";
+		$checked = in_array($answer['content'],$arr) ? 'checked' : '';
+		echo "<input type='checkbox' class='answer' name='answer[]' data-point='".$answer['point']."' value='".$answer['content']."' ".$checked." >".$answer['content']."<br>";
 	}
 	echo "<input type='hidden' name='answer' value=''>";
 }
@@ -17,32 +26,46 @@ function showCheckBox($answers)
 /**
  * Display answers as radio
  * @param  mixed $answers Answer list
+ * @param  boolean $is_back TRUE/FALSE
+ * @param  string $back_answer Old Answer
  * @return void
  */
-function showRadio($answers)
+function showRadio($answers,$is_back,$back_answer)
 {
 	foreach($answers as $answer )
 	{
 		//sprintf("<input type='radio' name='answer[]' data-point='%s' value='%s' >",$answer['point'],$answer['content']);
-		if (strpos('blank_text', $answer['content']) != -1 )
+		
+		$pos = strpos($answer['content'],'blank_text');
+		
+		if ( $pos !== false )
 		{
-			echo "<input type='radio' class='answer' name='answer' data-point='".$answer['point']."' value='".$answer['content']."' >".
-				str_replace('blank_text', "<input name='answer_value' type='text' >", $answer['content'] )." <br>";
+			$text_answer = '';
+			if($is_back)
+			{
+				$text_answer = substr($back_answer, $pos);
+			}
+			$checked = (str_replace('blank_text', $text_answer, $answer['content'] ) == $back_answer) ? 'checked' : '';
+			$html = "<input name='answer_value' type='text' value='".$text_answer."'>";
+			
+			echo "<input type='radio' class='answer' name='answer' data-point='".$answer['point']."' value='".$answer['content']."' ".$checked." >".
+				str_replace('blank_text', $html, $answer['content'] )." <br>";
 		} else 
 		{
-			echo "<input type='radio' class='answer' name='answer' data-point='".$answer['point']."' value='".$answer['content']."' >".$answer['content']." <br>";
+			$checked = ($answer['content'] == $back_answer) ? 'checked' : '';
+			echo "<input type='radio' class='answer' name='answer' data-point='".$answer['point']."' value='".$answer['content']."' ".$checked." >".$answer['content']." <br>";
 		}
-		
-
 	}
 }
 
 /**
  * Display answers as select
  * @param  mixed $answers Answer list
+ * @param  boolean $is_back TRUE/FALSE
+ * @param  string $back_answer Old Answer
  * @return void
  */
-function showSelect($answers)
+function showSelect($answers,$is_back,$back_answer)
 {
 	echo "<select name='answer' class='answer' >";
 	foreach($answers as $answer )
@@ -55,13 +78,20 @@ function showSelect($answers)
 /**
  * Display answers as select
  * @param  mixed $answers Answer list
+ * @param  boolean $is_back TRUE/FALSE
+ * @param  string $back_answer Old Answer
  * @return void
  */
-function showText($answers)
+function showText($answers,$is_back,$back_answer)
 {
 	foreach($answers as $answer)
 	{
-		$output = str_replace("blank_text", "<input type='text' class='answer' name='answer' value=''>", $answer['content']);
+		$html = "<input type='text' class='answer' name='answer' value=''>";
+		if($is_back)
+		{
+			$html = "<input type='text' class='answer' name='answer' value='".$back_answer."'>";
+		}
+		$output = str_replace("blank_text", $html, $answer['content']);
 		echo $output;
 	}
 }
@@ -73,11 +103,11 @@ function showText($answers)
 function question17()
 {
 	echo "<input type='text' name='answer' class='answer' id='answer'><br>" ;
-	echo "<label><input type='checkbox' id='calculate'>…or calculate it with:</label>";
+	echo "<label><input type='checkbox' id='calculate'>Click here if you don't know your customer acquisition cost and need help to calculate it:</label>";
 	echo "<ul id='calculate-items'>";
-	echo "<li>How many worked with Marketing & Sales last year? [<input type='number' class='calculate' id='sales' name='sales'>]e.g 10</li>";
-	echo "<li>Their average salary per month? [<input type='number' id='salary' class='calculate' name='salary'>] eg. 3000 </li>";
-	echo "<li>How much percentage of their time did they spend on NEW clients vs old ones (or other tasks) on average?  [<input type='number' class='calculate' name='percent' id='percent'>] eg. 75</li>";
-	echo "<li>How much money was spent on marketing to NEW clients last year? [<input type='number' class='calculate' id='spent' name='spent'>] e.g. 25 000 </li>";
+	echo "<li>How many worked with Marketing & Sales last year? <input type='number' class='calculate' id='sales' name='sales'>e.g 10</li>";
+	echo "<li>Their average salary per month? <input type='number' id='salary' class='calculate' name='salary'> eg. 3000 </li>";
+	echo "<li>How much percentage of their time did they spend on NEW clients vs old ones (or other tasks) on average?  <input type='number' class='calculate' name='percent' id='percent'> eg. 75</li>";
+	echo "<li>How much money was spent on marketing to NEW clients last year? <input type='number' class='calculate' id='spent' name='spent'> e.g. 25 000 </li>";
 	echo "</ul>";
 }

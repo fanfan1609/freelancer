@@ -54,6 +54,22 @@ input[type=submit]{
 	background: none repeat scroll 0% 0% #7EBB14;
 	transition: all 0.2s linear 0s;
 }
+
+input[type=button]{
+	position:absolute; bottom:10;left:10;
+	background-color: #7EBB14;
+	border-radius: 4px;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 7px 17px;
+	font-size: 17px;
+	background: none repeat scroll 0% 0% #7EBB14;
+	transition: all 0.2s linear 0s;
+}
+
 input[type=submit]:hover {
     background: none repeat scroll 0% 0% #25BB28;
     text-decoration: none;
@@ -70,6 +86,24 @@ input[type=submit]:active, input[type=submit]:hover {
     outline: 0px none;
 }
 input[type=submit]:focus {
+    outline: thin dotted;
+}
+input[type=button]:hover {
+    background: none repeat scroll 0% 0% #25BB28;
+    text-decoration: none;
+}
+input[type=button]:focus {
+    outline: thin dotted #333;
+    outline-offset: -2px;
+}
+input[type=button]:hover, input[type=button]:focus {
+    color: #ddd;
+    text-decoration: underline;
+}
+input[type=button]:active, input[type=button]:hover {
+    outline: 0px none;
+}
+input[type=button]:focus {
     outline: thin dotted;
 }
 *, *:before, *:after {

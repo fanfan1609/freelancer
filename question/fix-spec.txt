@@ -2,7 +2,7 @@
 
 2) Question id 6 only has one answer leading up to a result, but this should be placed among the paragraphs and not the bullet points as well.  // DONE
 
-3) Most (hopefully all) the bullets now has a font-awesome icon class connected to it. There is a need to create new classes: 
+3) Most (hopefully all) the bullets now has a font-awesome icon class connected to it. There is a need to create new classes: // DONE
 	a) with names fablue, fagreen, faorange, fared, faindigo, fayellow, fapurple, one for each color, but likely a little darker than the originals (if #ffff00 can be seen as original) in order to make it possible to see them better, e.g. perhaps #cccc00 for yellow etc. 
 	b) AND, they should be perhaps font-size:1.5em; to make it easier to see them as bullets, and 
 	c) made to text-indent negatively for the top row or first-letter such that the font-icon pops out to the front like as if that was the bullet instead. 
@@ -12,7 +12,7 @@
 
 5) In all questions with input type text boxes in the middle of the text, remove the [ and ] before and after. // DONE
 
-6) Questions nr 3, 18 or 19 should not be shown (and hence not the answers either).
+6) Questions nr 3, 18 or 19 should not be shown (and hence not the answers either).// DONE
 
 7) Question nr 10 has two answers that should be changed slightly: // DONE
 	a) the anwer "I use it, but would like to get more out of it." should be changed to: "I already use your system Otto, but would like to know more to get more out of it.", and
@@ -26,19 +26,19 @@
 
 11) Take away the answer-id "Other (please specify) " from question id 5 (answer id 30)  // DONE
 
-12) Now you can't use the browser button to step back while taking the test
+12) Now you can't use the browser button to step back while taking the test // DONE
 
-13) It does not work to have pre-checked radio-buttons or checkboxes, so there needs to be a control checking that at least one answer is selected. 
+13) It does not work to have pre-checked radio-buttons or checkboxes, so there needs to be a control checking that at least one answer is selected. // DONE
 
 14) Answer-id 55 of question id 11 should be "Yes, Vendemore" instead of "Yes, Jajja" // DONE
 
-15) To simplify question 14, let's throw around the order of the two alternatives.
+15) To simplify question 14, let's throw around the order of the two alternatives. // DONE
 
 16) Question-id 16 has a missing word at the end, make it: "How much profit does one customer bring on average over its time as a client?" // DONE
 
-17) For Question-id 17, the checkbox for "…or calculate it with:" shouldn't be checked from the start. And to make it clearer, the wording: "…or calculate it with:" should rather be: "Click here if you don't know your customer acquisition cost and need help to calculate it."
+17) For Question-id 17, the checkbox for "…or calculate it with:" shouldn't be checked from the start. And to make it clearer, the wording: "…or calculate it with:" should rather be: "Click here if you don't know your customer acquisition cost and need help to calculate it." // DONE
 
-18) Again if question-id 17 has the answer NaN, it should require the user to fill in EITHER the Client Acquisition Cost (CAC) or to fill in the other fields to calculate a CAC.
+18) Again if question-id 17 has the answer NaN, it should require the user to fill in EITHER the Client Acquisition Cost (CAC) or to fill in the other fields to calculate a CAC. // DONE
 
 19) On the results page, combine: "Show your result below (as your answer)" and " How Otto can help you get more client " to become "<h1>How Otto can help you get more clients<br>&ndash;Based on your individual answers</h1>" // DONE
 

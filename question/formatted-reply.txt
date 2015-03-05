@@ -1,0 +1,43 @@
+Hi again, 
+
+yeah, sorry about 9), I don't know what I meant now, I hope it was something I added elsewhere :)
+
+About 12) to have the results be resetted is hard on the user as we have so many answers, I think, it should rather remember the answers
+
+About 13) I don't think any of the answers should have anything pre-checked, rather that there would be a javascript check that at least ONE of the options (which would work with both radio and checkbox) is checked. // DONE
+
+15) This was not so much (or so important like 13) just alter the order of the two answer alternatives (make the lower the upper and vice versa), otherwise, it should lead to being skippable in the same way as before. // DONE
+
+21) OK, good. 
+
+22) Ah, the code to the webinar can be like the form on http://www.sonician.com/en/events
+(including its hidden variables and destination)
+
+In order to write out the time (Thursdays at 3pm CET) you can use the following PHP code:
+
+<span style="font-size:1.6em;font-weight:bold;line-height:1.2em"><?php 
+// See if before or after 1500 so we write out the right Thursday
+$current_time = (int) date('Hi');
+if($current_time < 1500) {
+    $day = 'Thursday';
+	}
+	else
+	{
+	$day = 'next Thursday';
+	};
+// Write it out, e.g. Thursday, Oct 24: 3pm (CET) When's this? 
+echo date('l, M j', strtotime($day)).': 3pm (CET)</span>&nbsp;<span class="what"><a target=_new href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=Marketing+Automation+Webinar&iso='. 
+date('Ymd', strtotime($day)).'T15&p1=291&ah=1">When&rsquo;s this in my time-zone?</a></span>';
+?>
+
+Actually, since we also want to tell people to print it to show their colleagues (actually a print button would be good at the top with the call out to "Print this to show your colleagues")for all actions (webinar, buy now, meeting) I think we should also write out short versions of the URLs, in order to make it possible for the ones who have it printed out to take the actions, then it would be the following that I just set up in the .htaccess under www.sonician.com:
+
+Redirect 301 /buy-now https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean
+Redirect 301 /join-webinar http://www.sonician.com/en/events
+Redirect 301 /book-time-slot http://www.sonician.com/en/event-timeslots
+
+So better write with our short-urls: 
+be2.co/buy-now
+be2.co/join-webinar
+be2.co/book-time-slot
+

@@ -6,34 +6,46 @@ include_once "database.php";
 include_once "header.php";
 include_once "template.php";
 
+// $delete_id = array(3,18,19);
+// $finish_id = 17;
 $survey 		= new DB();
-if( empty($_POST['question_id']) )
+$back_answer 	= '';
+$is_back 		= 0;
+if( !empty($_POST['is_back']) )
 {
-	$question_id = 1; // first question
-	$_SESSION['count'] = 0;
-	unset($_SESSION['result']);
+	$question_id = $_POST['question_id'];
+	$back_answer = $_SESSION['result'][$question_id]['answer'];
+	$is_back 	 = 1;
 } else {
-	// Store data
-	if( !isset($_SESSION['result']) )
+	if( empty($_POST['question_id']) )
 	{
-		$_SESSION['result'] = array();
-	}
-	
-	$_SESSION['result'][$_POST['question_id']] = array(
-		'question' => $_POST['question'],
-		'answer' => !empty($_POST['answer']) ? $_POST['answer'] : '' ,
-		'point' => $_POST['point']);
-	if( $_POST['question_id'] == 14 && strpos($_POST['answer'],"know our numbers"))
-	{
-		// Skip to question 20 if question 14 select answer 2
-		$question_id = 20 ;
+		$question_id = 1; // first question
+		$_SESSION['count'] = 0;
+		unset($_SESSION['result']);
 	} else {
-		$question_id = $_POST['question_id'] + 1; // next question	
-	}
-	
-	if( $question_id == 17 )
-	{
-		$numof_new_clients = !empty($_SESSION['result']['15']['answer']) ? $_SESSION['result']['15']['answer'] : 1;
+		// Store data
+		if( !isset($_SESSION['result']) )
+		{
+			$_SESSION['result'] = array();
+		}
+		
+		$_SESSION['result'][$_POST['question_id']] = array(
+			'question' => $_POST['question'],
+			'answer' => !empty($_POST['answer']) ? $_POST['answer'] : '' ,
+			'point' => $_POST['point']);
+
+		if( $_POST['question_id'] == 14 && strpos($_POST['answer'],"know our numbers"))
+		{
+			// Skip to question 20 if question 14 select answer 2
+			$question_id = 18 ;
+		} else {
+			$question_id = $_POST['question_id'] == 2 ? $_POST['question_id'] + 2 : $_POST['question_id'] + 1; // next question		
+		}
+		
+		if( $question_id == 17 )
+		{
+			$numof_new_clients = !empty($_SESSION['result']['15']['answer']) ? $_SESSION['result']['15']['answer'] : 1;
+		}
 	}
 }
 
@@ -58,33 +70,40 @@ if( $question ) // Still has question
 	<?php endif?>
 		<h3><?php echo $question['content'] ?></h3>
 		<input type="hidden" name="numof_new_clients" id='numof_new_clients' value='<?php echo !empty($numof_new_clients) ? $numof_new_clients : 1 ?>'>
+		<input type="hidden" name="is_back" id="is_back" value="0" >
 		<input type="hidden" name="question_id" id="question_id" value="<?php echo $question_id?>" >
 		<input type="hidden" name="question" value="<?php echo $question['content'] ?>" >
 		<input type="hidden" name="type" id="type" value="<?php echo $question['type'] ?>" >
-		<input type="hidden" name="is_skippable" id="is_skippable" value="<?php echo $question['is_skippable'] ?>" >
+		<input type="hidden" name="is_skippable" id="is_skippable" value="0" >
 		<input type="hidden" name="point" value="0" id="question_point">
 		<?php
 			if( $question_id != 17)
 			{
 				switch ($question['type']) {
 					case 'text':
-						showText($answers);
+						showText($answers,$is_back,$back_answer);
 						break;
 					case 'checkbox':
-						showCheckbox($answers);
+						showCheckbox($answers,$is_back,$back_answer);
 						break;
 					case 'select':
-						showSelect($answers);
+						showSelect($answers,$is_back,$back_answer);
 						break;
 					default: // Default is radio
-						showRadio($answers);
+						showRadio($answers,$is_back,$back_answer);
 						break;
 				}
 			} else {
 				question17();
 			}
 		?>
+
 		<input  id='btnValidate'  type='submit' value='NEXT'/>
+		<?php if(!empty($_POST['question_id']) && $question_id != 1):
+		$back_id = $question_id == 4  ? 2 : $question_id - 1;
+		?>
+			<input type='button' id='back' value='Back' data-id="<?php echo $back_id?>" />
+		<?php endif?>
 	</form>
 <?php endif;?>
 </div>
@@ -109,8 +128,14 @@ include "footer.php";
 		var answer  = '';
 		var point   = 0;
 
-		$("[type='radio']").first().attr('checked','checked');
-		$("[type='checkbox']").first().attr('checked','checked');
+		if( $("[type='radio']:checked").length == 0 ){
+			$("[type='radio']").first().attr('checked','checked');
+		}
+		if( $("[type='checkbox']:checked").length == 0 ){
+			$("[type='checkbox']").first().attr('checked','checked');
+		}
+
+		$("#calculate").attr("checked",false);
 		$("#form00").submit(function(){
 			switch(type){
 				case 'text':
@@ -148,11 +173,17 @@ include "footer.php";
 			}
 			
 			$("input[name='point']").val(point);
-			if( is_skip === 0 && answer.length < 1 )
+			
+			if( is_skip == 0 && answer.length < 1 )
 			{
 				msg = type != 'text' ? "Please choose one option" : "Please input value";
 				alert(msg);
             	return false;
+			}
+			if( answer == 'NaN' && $("#question_id").val() == 17)
+			{
+				alert('Please fill in EITHER the Client Acquisition Cost (CAC) or to fill in the other fields to calculate a CAC');
+				return false;
 			}
 			//return true;
 		});
@@ -162,14 +193,20 @@ include "footer.php";
 			displayCalculate();
 		});
 		$(".calculate").blur(function(event) {
-			console.log('calculate');
 			doMath();
+		});
+
+		$("#back").click(function(){
+			id = $(this).attr('data-id');
+			$("#is_back").val(1);
+			$("#question_id").val(id);
+			$("#form00").submit();
 		});
 	});
 
 	function displayCalculate(){
 		if($("#calculate").is(':checked')){
-			$("#answer").attr('disabled',true);
+			// $("#answer").attr('disabled',true);
 			$("#calculate-items").show();
 		} else {
 			$("#answer").attr('disabled',false);

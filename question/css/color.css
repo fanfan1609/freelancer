@@ -1,0 +1,37 @@
+.fablue {
+	background-color: blue;
+}
+
+.fagreen {
+	background-color: green;
+}
+.faorange {
+	background-color: orange;
+}
+.faindigo {
+	background-color: indigo;
+}
+.fapurple {
+	background-color: purple;
+}
+.fared {
+	background-color: red;
+}
+.fablue {
+	background-color: blue;
+}
+.fagrey {
+	background-color: grey
+}
+ul.optional {
+	list-style: none outside none;
+	clear: left;
+}
+
+ul.optional li {
+	float: left;
+	display: block;
+	padding: 5px;
+	width: 50%;
+	font-size: 1.5em;
+}
