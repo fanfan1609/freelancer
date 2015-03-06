@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 04, 2015 at 06:58 PM
--- Server version: 5.5.41-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.6
+-- Host: 127.0.0.1
+-- Generation Time: Mar 06, 2015 at 03:55 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `survey`
 --
+CREATE DATABASE IF NOT EXISTS `survey` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `survey`;
 
 -- --------------------------------------------------------
 
@@ -115,8 +117,8 @@ INSERT INTO `answers` (`id`, `question_id`, `content`, `point`, `is_deleted`) VA
 (73, 13, 'Yes, we use Lundalogik.\r\n', 5, 0),
 (74, 13, 'Yes, we use Upsales\r\n', -10, 0),
 (75, 13, 'Yes, we use blank_text', 10, 0),
-(76, 14, 'I know at least roughly my Marketing & Sales costs, what a client brings on average, and the number of clients we get in a year and would like to get a more specific answer based on my own numbers the research of Forrester Research, Gartner group etc.\r\n', 5, 0),
-(77, 14, 'I don’t know our numbers, or I don’t want such a specific response, so just take me to the results so far.\r\n', -10, 0),
+(76, 14, 'I don’t know our numbers, or I don’t want such a specific response, so just take me to the results so far.\r\n', -10, 0),
+(77, 14, 'I know at least roughly my Marketing & Sales costs, what a client brings on average, and the number of clients we get in a year and would like to get a more specific answer based on my own numbers the research of Forrester Research, Gartner group etc.\r\n', 5, 0),
 (78, 15, 'blank_text e.g. 100 ', 0, 0),
 (80, 16, 'blank_text e.g. 100 000 ', 0, 0),
 (81, 17, 'blank_text e.g. 50 000', 0, 0),
@@ -174,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
 INSERT INTO `questions` (`id`, `content`, `is_skippable`, `is_deleted`, `type`, `note`) VALUES
 (1, 'Are you primarily targeting ?', 0, 0, 'radio', ''),
 (2, 'What would you want to sell more of?', 0, 0, 'radio', ''),
-(3, 'How do you work with sales today?', 0, 0, 'checkbox', ''),
+(3, 'How do you work with sales today?', 0, 1, 'checkbox', ''),
 (4, 'How do you work with Marketing today?', 0, 0, 'checkbox', ''),
 (5, 'What 3 area(s) are you considering to focus more on ', 0, 0, 'checkbox', ''),
 (6, 'How many sales reps or marketers are you?', 0, 0, 'radio', ''),
@@ -189,8 +191,8 @@ INSERT INTO `questions` (`id`, `content`, `is_skippable`, `is_deleted`, `type`, 
 (15, 'How many customers did you approximately get  last year?', 1, 0, 'text', 'Currency?\r\nDon’t write any currency like $, kr, € or £. Just use the same for all questions, and the response will be in this currency as well.'),
 (16, 'How much profit does one customer bring on average over its time as a client?', 1, 0, 'text', ''),
 (17, 'Fill in your customer acquisition cost:', 1, 0, 'text', ''),
-(18, 'If B2B, or dealing only with B2B: who are your primarily customers?', 1, 0, 'radio', ''),
-(19, 'In which Industry would you say you primarily work?', 1, 0, 'select', '');
+(18, 'If B2B, or dealing only with B2B: who are your primarily customers?', 1, 1, 'radio', ''),
+(19, 'In which Industry would you say you primarily work?', 1, 1, 'select', '');
 
 -- --------------------------------------------------------
 
