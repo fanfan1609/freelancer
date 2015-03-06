@@ -174,7 +174,7 @@ include "footer.php";
 			
 			$("input[name='point']").val(point);
 			
-			if( is_skip == 0 && answer.length < 1 )
+			if( is_skip == 0 && answer.length < 1 && $("#is_back").val() == 0)
 			{
 				msg = type != 'text' ? "Please choose one option" : "Please input value";
 				alert(msg);

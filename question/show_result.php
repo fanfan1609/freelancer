@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 $point = 0;
-$answer_list = array(1,2,6,7,8,19);
+$answer_list = array(1,2,6,10,7,8,19);
 //include "$root/survey/test/header.php";
 // include_once "header.php";
 include_once 'answer.php';
@@ -78,8 +78,7 @@ include_once 'answer.php';
                         <p><?php echo $answer?></p>
                         <?php endif?>
                     <?php endif;?>
-                <?php endif;?>
-                <p>Total point : <strong><?php echo $point;?></strong></p>
+                <?php endif;?>                
             </div>
             <?php if(!empty($_SESSION['result'][17])):
                 if (isset($_SESSION['result'][15])) $valueofclient = $_SESSION['result'][15]['answer'];
@@ -193,9 +192,7 @@ include_once 'answer.php';
                     You’ll never forgive yourself unless you
                     Try us
                 </p>
-                <p>
-                    <a class="btn btn-primary btn-large" href="#">Contact us</a>
-                </p>
+                <?php showWebinar($point,$_SESSION['result'][10]['answer']);?>
             </div>
             <div class="col-md-4 column">
                 <img alt="footer" src="images/footer.png" />

@@ -344,3 +344,33 @@ function answer_19($answer)
 {
 	return $answer;
 }
+
+// Question 10
+function showWebinar($point,$answer)
+{
+	$answers = array(
+		'48' =>'Don’t know much, but would like to know more about it.',
+		'49' =>'Have heard about it, and would like to know more about how it could work for us.',
+		'50' =>'I understand the principle behind the process or systems, and have some ideas about how to use it, but haven’t started yet.',
+		'51' =>'I already use your system Otto, but would like to know more to get more out of it.',
+		'52' =>'I already use another Marketing Automation system',
+	);
+	$id = null;
+	foreach($answers as $k => $a){
+		if( $a == $answer ) $id = $k; break;
+	}
+	$html = "<div><ul class='webinar'>";
+	if($point < 15 && $id < 51)
+	{
+		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean' class='btn btn-primary btn-lg'>Buy Now</a></li>";
+		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/events' class='btn btn-primary btn-lg'>Join our webinar</a></li>";
+	} else if($point >= 15 && $id < 52) {
+		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean' class='btn btn-primary btn-lg'>Buy Now</a></li>";
+		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/events' class='btn btn-primary btn-lg'>Join our webinar</a></li>";
+		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/event-timeslots' class='btn btn-primary btn-lg'>Book personal demo</a></li>";
+	} else if($point >= 15 && $id == 52){
+		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/event-timeslots' class='btn btn-primary btn-lg'>Book personal demo</a></li>";
+	}
+	$html .= "<ul></div>";
+	echo $html;
+}

@@ -35,7 +35,6 @@ function showRadio($answers,$is_back,$back_answer)
 	foreach($answers as $answer )
 	{
 		//sprintf("<input type='radio' name='answer[]' data-point='%s' value='%s' >",$answer['point'],$answer['content']);
-		
 		$pos = strpos($answer['content'],'blank_text');
 		
 		if ( $pos !== false )
@@ -45,9 +44,23 @@ function showRadio($answers,$is_back,$back_answer)
 			{
 				$text_answer = substr($back_answer, $pos);
 			}
-			$checked = (str_replace('blank_text', $text_answer, $answer['content'] ) == $back_answer) ? 'checked' : '';
-			$html = "<input name='answer_value' type='text' value='".$text_answer."'>";
+
+			$value = $text_answer;
+
+			if( $answer['question_id'] == 12 )
+			{
+				$pos1 = strpos($text_answer,' to do it.');
+				$text_answer = substr($text_answer,0,$pos1);
+			}
 			
+			// var_dump()
+			$checked = (str_replace('blank_text', $text_answer, trim($answer['content']) ) == trim($back_answer)) ? 'checked' : '';
+			if($checked)
+			{
+				$html = "<input name='answer_value' type='text' value='".$text_answer."'>";	
+			} else {
+				$html = "<input name='answer_value' type='text' value=''>";	
+			}
 			echo "<input type='radio' class='answer' name='answer' data-point='".$answer['point']."' value='".$answer['content']."' ".$checked." >".
 				str_replace('blank_text', $html, $answer['content'] )." <br>";
 		} else 
