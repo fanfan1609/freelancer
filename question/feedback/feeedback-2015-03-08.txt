@@ -1,0 +1,57 @@
+Great, 
+
+I installed it on www.sonician.com/survey/test6/
+
+When running it, I still came across some issues although it really starts to be finished now:
+
+1) I still get all questions having one answer checked already, where it shouldn't have any, but instead a javascript check to see that they actually filled in at least one value.
+
+2) At the end, I get the bullets in two columns all right, but I have a big "hole" in the left hand side (see bullets-with-hole.png).
+
+3) The size of the bullets-text was pretty big. It was just the icon as a bullet that should be colored and extra-big, so I already changed those ones to: 
+.fapurple {
+	font-size: 1.5em;
+	color: purple;
+}
+
+...etc. But, I'm not sure where I found the size of the text of the list-text itself?
+
+4) Three of the bullet answers I got shoud not have been there at all: "Only a few companies actually maximize the benefits from participating at a trade show or event. Otto makes it possible for you to actually make use of all the contacts you make during that kind of events by registering them into Otto, the automated customer acquisition system.
+Make your work with e-mail marketing more efficient, with Otto your mass e-mails will not end up in a trashbox, the reciever will feel selected since the e-mails are personalized and you will be able to see what actions are caused by your promotions or information.
+You have obviously realized the benefit with traffic on your website but how about monitoring the traffic, capturing the visitors and convering them into real contacts that become customers? All this is possible with help from Otto who is a automated customer acquisiton system, he does all this automatically for you and your company. " 
+
+6) Are there more answers that should have been removed (since it's not in the new column)? None of the old column (H) should be used, only those of column (I), and if any of the values in (I) had Non Applicable (N/A), that should simply not be shown.
+
+7) On the question of 
+"Fill in your customer acquisition cost:
+
+Click here if you don't know your customer acquisition cost and need help to calculate it:"
+
+It should have e.g. 5000 after the first input box, and no colon after "need help to calculate it"
+
+8) When you click "No, thanks. Just show me the results." It takes some time to get to the next level. There should:
+a) be a space after comma and point, and
+b) use one of the font-awesome icons like http://fortawesome.github.io/Font-Awesome/icon/spinner/ with its spin js to show that something is happening.
+
+9) There is two errors in the calculations vis-a-vis the original calculations which are right. There seem to be two small problems: 
+
+a. The value calculated in the text: "...generally 47% higher order value in your case, which means that you would earn 47 000 000 more during a year" shouldn't in my case be 47 million but 4,7M, which means it was *10 too much somewhere (or not divided perhaps). 
+
+b. ALL the other values were exactly 1000 x too much, actually, so I'm guessing in one of the values you forgot to divide by 1000.
+
+10) The custom_field to start with is now actually: custom_18 since someone apparently in the mean time started to use the ones 12-17. May I ask also which would be the LAST custom_field used if the first is custom_18?
+
+11) The logos in the framed box are becoming vertical when the screen gets smaller, which looks a little strange.
+
+12) When I print it, the top paragraphs come first and then the framed box. It wouldn't be possible to have them side-by-side? It's not extremely important, but it becomes more important to at least have the research companies logos at the end of the framed box come side-by-side and not all vertical like now.
+
+13) There seems to not be any new bullet row if both "Content Marketing" and "Web Marketing" is used, see the screendump attached. 
+
+14) The "Buy now", "Join our webinar" and "Book meeting" was now over-and-above, but it would look better side-by-side in the web-version (although over-and-above with the print-out version would likely be better).
+
+15) I didn't find the encouragement to "Print and show to a colleague"
+
+16) You said that the short-URLs didn't work, which one didn't?
+
+17) Particularly as printed, it looks a little "dead" without pictures, perhaps we should at least have the Otto-logo floating to the right at the very top of the page? It's at: http://www.sonician.com/images/00_otto_lil-otto.png 
+but should be scaled down to perhaps 150px wide max?

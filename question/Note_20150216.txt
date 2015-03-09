@@ -1,5 +1,0 @@
-Note for update
-- Please use survey.sql for database, I have updated points based on your excel file.
-- Please check and give me feedback. 
-
-Regards
