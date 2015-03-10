@@ -168,7 +168,13 @@ include_once 'answer.php';
                             }
                             ?>
                             <?php if(!empty($answer)):?>
-                                <li><?php echo $answer;?></li>
+                                <?php if(is_array($answer)):?>
+                                    <?php foreach($answer as $a):?>
+                                        <li><?php echo $a;?></li>
+                                    <?php endforeach?>
+                                <?php else:?>
+                                    <li><?php echo $answer;?></li>
+                                <?php endif?>
                             <?php endif;?>
                         <?php endif?>
                     <?php endforeach;?>
@@ -184,7 +190,7 @@ include_once 'answer.php';
             </div>
         </div>
         <div class="row clearfix">
-            <div class="jumbotron">
+            <div class="jumbotron clearfix">
                 <h1>
                     What now?
                 </h1>

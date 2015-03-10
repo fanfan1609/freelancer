@@ -33,22 +33,22 @@ function answer_2($answer)
 function answer_4($answer)
 {
 	$output = '';
-	if( strpos($answer, 'Direct mail'))
-	{
-		$output .= "<i class='fa fa-paper-plane'></i>Since direct emailing is one of your ways to work with sales today Otto can help you with making this process much more efficient. Otto is an automated customer acquisition system that allows you to send mass e-mails that are personalized based on the registered information from your target. Another function is that the mass e-mails can automatically be sent from the personal e-mailadresses of your sellstaff without them having to lift a finger. <br>";
-	}
-	if( strpos($answer, 'Participating in trade shows / other events'))
-	{
-		$output .= "<i class='fa fa-paper-plane'></i>Only a few companies actually maximize the benefits from participating at a trade show or event. Otto makes it possible for you to actually make use of all the contacts you make during that kind of events by registering them into Otto, the automated customer acquisition system.<br>";
-	}
-	if( strpos($answer, 'E-mail marketing'))
-	{
-		$output .= "<i class='fa fa-paper-plane'></i>Make your work with e-mail marketing more efficient, with Otto your mass e-mails will not end up in a trashbox, the reciever will feel selected since the e-mails are personalized and you will be able to see what actions are caused by your promotions or information.<br>";
-	}
-	if( strpos($answer, 'Web / SEO – Search Engine Optimization via Blogs, Content Marketing, Active in Social Media (Facebook, Twitter, LinkedIn, etc.)'))
-	{
-		$output .= "<i class='fa fa-paper-plane'></i>You have obviously realized the benefit with traffic on your website but how about monitoring the traffic, capturing the visitors and convering them into real contacts that become customers? All this is possible with help from Otto who is a automated customer acquisiton system, he does all this automatically for you and your company. <br>";
-	}
+	// if( strpos($answer, 'Direct mail'))
+	// {
+	// 	$output .= "<i class='fa fa-paper-plane'></i>Since direct emailing is one of your ways to work with sales today Otto can help you with making this process much more efficient. Otto is an automated customer acquisition system that allows you to send mass e-mails that are personalized based on the registered information from your target. Another function is that the mass e-mails can automatically be sent from the personal e-mailadresses of your sellstaff without them having to lift a finger. <br>";
+	// }
+	// if( strpos($answer, 'Participating in trade shows / other events'))
+	// {
+	// 	$output .= "<i class='fa fa-paper-plane'></i>Only a few companies actually maximize the benefits from participating at a trade show or event. Otto makes it possible for you to actually make use of all the contacts you make during that kind of events by registering them into Otto, the automated customer acquisition system.<br>";
+	// }
+	// if( strpos($answer, 'E-mail marketing'))
+	// {
+	// 	$output .= "<i class='fa fa-paper-plane'></i>Make your work with e-mail marketing more efficient, with Otto your mass e-mails will not end up in a trashbox, the reciever will feel selected since the e-mails are personalized and you will be able to see what actions are caused by your promotions or information.<br>";
+	// }
+	// if( strpos($answer, 'Web / SEO – Search Engine Optimization via Blogs, Content Marketing, Active in Social Media (Facebook, Twitter, LinkedIn, etc.)'))
+	// {
+	// 	$output .= "<i class='fa fa-paper-plane'></i>You have obviously realized the benefit with traffic on your website but how about monitoring the traffic, capturing the visitors and convering them into real contacts that become customers? All this is possible with help from Otto who is a automated customer acquisiton system, he does all this automatically for you and your company. <br>";
+	// }
 	// switch (trim($answer)) {
 	// 	case 'Direct mail':
 	// 		$output = "Since <strong>direct emailing</strong> is one of your ways to work with sales today Otto can help you with making this process much more efficient. Otto is an automated costumer acquisition system that allows you to send mass e-mails that are personalized based on the registered information from your target. Another function is that the mass e-mails can automatically be sent from the personal e-mailadresses of your sellstaff without them having to lift a finger. ";
@@ -71,30 +71,32 @@ function answer_4($answer)
 
 function answer_5($answer)
 {
-	$output = '';
+	// $output = '';
+	$output = array();
 	if( strpos($answer, 'More direct (physical) mail'))
 	{
-		$output .= "<i class='fa fa-qrcode fablue' ></i> <b>Digital print marketing:</b> Since you'll use Direct Marketing, you'll benefit from the QR-codes and the short PURLs (Personal URLs) that Otto&reg; will give you on the form <b>be2.co/xyzabc</b> which will help you track contacts & their actions.<br>";
+		$output[] = "<i class='fa fa-qrcode fablue' ></i> <b>Digital print marketing:</b> Since you'll use Direct Marketing, you'll benefit from the QR-codes and the short PURLs (Personal URLs) that Otto&reg; will give you on the form <b>be2.co/xyzabc</b> which will help you track contacts & their actions.<br>";
+
 	}
 	if( strpos($answer, 'More participation in trade shows / events'))
 	{
-		$output .= "<i class='fa fa-users fablue' ></i> <b>Event-followup up:</b> Use Otto&reg; to register users for the seminars, webinars or other events you're throwing, and use it to follow-up from trade-shows. Make sure to register all your new potential customers in the system and Otto takes over from there making sure that each is followed-up and nurtured into sales qualified leads.<br>";
+		$output[] = "<i class='fa fa-users fablue' ></i> <b>Event-followup up:</b> Use Otto&reg; to register users for the seminars, webinars or other events you're throwing, and use it to follow-up from trade-shows. Make sure to register all your new potential customers in the system and Otto takes over from there making sure that each is followed-up and nurtured into sales qualified leads.<br>";
 	}
 	if( strpos($answer, 'More E-mail marketing'))
 	{
-		$output .= "<i class='fa fa-paper-plane fablue'></i> <b>E-mail marketing:</b> The unique architecture of Otto actually builds every e-mail one-by-one and includes both text and html-e-mails. This means your recipients are 3-5 times more likely to act since they can see exactly who is the sender (one or each of your representatives to his respective contacts) and using links that users dare to click on when they hover over them. Naturally, e-mails can still be personalized based on the information about the sender and receiver. You choose if it should look like a designed newsletter or as if you just sent it one and one from Outlook even if you actually sent it to 1000s.<br>";
+		$output[] = "<i class='fa fa-paper-plane fablue'></i> <b>E-mail marketing:</b> The unique architecture of Otto actually builds every e-mail one-by-one and includes both text and html-e-mails. This means your recipients are 3-5 times more likely to act since they can see exactly who is the sender (one or each of your representatives to his respective contacts) and using links that users dare to click on when they hover over them. Naturally, e-mails can still be personalized based on the information about the sender and receiver. You choose if it should look like a designed newsletter or as if you just sent it one and one from Outlook even if you actually sent it to 1000s.<br>";
 	}
 	if( strpos($answer, 'More Telemarketing / Meeting Booking') )
 	{
-		$output .= "<i class='fa fa-phone fagreen'></i> <b>Telemarketing:</b> To actually call potential clients are obviously among the best way to get real answers and customers. When you combine telemarketing with lead nurturing and scoring also using e-mail, print or sms, you will get 40-60% more of &quot;YES&quot; and you will know exactly which 15% it's worth to come back to.<br>";
+		$output[] = "<i class='fa fa-phone fagreen'></i> <b>Telemarketing:</b> To actually call potential clients are obviously among the best way to get real answers and customers. When you combine telemarketing with lead nurturing and scoring also using e-mail, print or sms, you will get 40-60% more of &quot;YES&quot; and you will know exactly which 15% it's worth to come back to.<br>";
 	}
 	if( strpos($answer, 'More PR / Content Marketing (Search Engine Optimization, Blogs, Facebook, Twitter, LinkedIn, etc.)'))
 	{
-		$output .= "<i class='fa fa-file-text-o fablue'></i> <b>Content Marketing:</b> When you spend time writing good content. You'll likely benefit greatly from it, but it can be tricky to monitor what its worth unless you measure the RoI also from the time you spend. You'll also want to be sure to use the content as news you send out, and by using Otto, you can also get double the effect as much material also can be re-used for long-term lead nurturing sequences.";
+		$output[] = "<i class='fa fa-file-text-o fablue'></i> <b>Content Marketing:</b> When you spend time writing good content. You'll likely benefit greatly from it, but it can be tricky to monitor what its worth unless you measure the RoI also from the time you spend. You'll also want to be sure to use the content as news you send out, and by using Otto, you can also get double the effect as much material also can be re-used for long-term lead nurturing sequences.";
 	}
 	if( strpos($answer, 'More on-line advertizing (Google Adwords, Facebook, LinkedIn, Media houses)') )
 	{
-		$output .= "<i class='fa fa-google faorange'></i> <b>Web Marketing:</b> You have obviously realized the benefit with traffic to your website but how about monitoring the traffic, capturing the visitors and converting them into real contacts that become customers where you can measure the RoI? All this is possible with the help from Otto working as your automated customer acquisiton system.";
+		$output[] = "<i class='fa fa-google faorange'></i> <b>Web Marketing:</b> You have obviously realized the benefit with traffic to your website but how about monitoring the traffic, capturing the visitors and converting them into real contacts that become customers where you can measure the RoI? All this is possible with the help from Otto working as your automated customer acquisiton system.";
 	}
 	// switch (trim($answer)) {
 	// 	case 'More direct (physical) mail':
@@ -166,26 +168,26 @@ function answer_8($answer)
 
 function answer_9($answer)
 {
-	$output = '';
+	$output = array();
 	if( strpos($answer, 'Get more new sales qualified leads'))
 	{
-		$output .= "<i class='fa fa-magnet fared' ></i> <b>Getting more sales qualified leads:</b> Otto will deliver qualified leads by capturing website visitors, following-up event participants and client discussions through communication a little at a time (also known as drip marketing or lead nurturing). This allows your leads to interact through answering and clicking what information is most interesting for them and thereby making them qualify themselves to a higher lead-score until you know it's worthwhile to interact on a more personal level to drive sales.<br>";
+		$output[] = "<i class='fa fa-magnet fared' ></i> <b>Getting more sales qualified leads:</b> Otto will deliver qualified leads by capturing website visitors, following-up event participants and client discussions through communication a little at a time (also known as drip marketing or lead nurturing). This allows your leads to interact through answering and clicking what information is most interesting for them and thereby making them qualify themselves to a higher lead-score until you know it's worthwhile to interact on a more personal level to drive sales.<br>";
 	}
 	if( strpos($answer, 'Convert more websites visitors into leads'))
 	{
-		$output .= "<i class='fa fa-power-off fagreen'></i> <b>Converting web-visitors:</b><br>1) With most Marketing Automation systems, you can capture leads through call to actions to fill in forms. Naturally, you can do this in a simple way with Otto, too, and you can even do it in more advanced ways that most other systems can't handle, e.g. by showing the form at the end of a video in which you urge the visitor to leave his details. <br>2)However, Otto is even more unique in something very simple to set up that other systems can't do at all: Otto has the ability to capture the actual organization behind just a visitor's IP-address AND to find out the e-mail address of the job-function you want to reach when it comes to businesses so you can even follow-up automatically. The database extends across all of Europe so far with millions of up-to-date records. <br>";
+		$output[] = "<i class='fa fa-power-off fagreen'></i> <b>Converting web-visitors:</b><br>1) With most Marketing Automation systems, you can capture leads through call to actions to fill in forms. Naturally, you can do this in a simple way with Otto, too, and you can even do it in more advanced ways that most other systems can't handle, e.g. by showing the form at the end of a video in which you urge the visitor to leave his details. <br>2)However, Otto is even more unique in something very simple to set up that other systems can't do at all: Otto has the ability to capture the actual organization behind just a visitor's IP-address AND to find out the e-mail address of the job-function you want to reach when it comes to businesses so you can even follow-up automatically. The database extends across all of Europe so far with millions of up-to-date records. <br>";
 	}
 	if( strpos($answer, 'To better follow up existing leads and customers to make them buy more'))
 	{
-		$output .= "<i class='fa fa-exchange fablue' ></i> <b>Convert to sales:</b> If you want to follow up existing leads and customers to make them buy more, then you and Otto are going to be great friends! it's easy to set up long-term communication with our templates and suggestions, and then Otto will very efficiently help you build that long term relationship with your customers to transform them into frequent buyers and returning customers.<br>";
+		$output[] = "<i class='fa fa-exchange fablue' ></i> <b>Convert to sales:</b> If you want to follow up existing leads and customers to make them buy more, then you and Otto are going to be great friends! it's easy to set up long-term communication with our templates and suggestions, and then Otto will very efficiently help you build that long term relationship with your customers to transform them into frequent buyers and returning customers.<br>";
 	}
 	if( strpos($answer, 'Reduce  the time of prospecting for sales'))
 	{
-		$output .= "<i class='fa fa-clock-o faindigo'></i> <b>Save time:</b> The magazine <i>Sales Insights</i> claim that 10h/week of a sales-representative's time is spent prospecting, and only 16h actually talking to clients to close deals. In order to get more client-time, Otto will reduce the time of prospecting and follow-up. .<br>";
+		$output[] = "<i class='fa fa-clock-o faindigo'></i> <b>Save time:</b> The magazine <i>Sales Insights</i> claim that 10h/week of a sales-representative's time is spent prospecting, and only 16h actually talking to clients to close deals. In order to get more client-time, Otto will reduce the time of prospecting and follow-up. .<br>";
 	}
 	if( strpos($answer, "Get better track of customers' decision / buying process"))
 	{
-		$output .= "<i class='fa fa-heartbeat fared' ></i> <b>Finding out the buying-process</b> To track and monitor the customers' decision and buying process is easily made with Otto which enables you to get a complete overall view of how the customers react and interact after promotions and what they like on your website. It will even help you trigger new actions to e.g. ask them a very specific question only if they're interested in a particular piece of your content.<br>";
+		$output[] = "<i class='fa fa-heartbeat fared' ></i> <b>Finding out the buying-process</b> To track and monitor the customers' decision and buying process is easily made with Otto which enables you to get a complete overall view of how the customers react and interact after promotions and what they like on your website. It will even help you trigger new actions to e.g. ask them a very specific question only if they're interested in a particular piece of your content.<br>";
 	}
 	// switch (trim($answer)) {
 	// 	case 'Get more new sales qualified leads':
@@ -212,25 +214,25 @@ function answer_9($answer)
 function answer_10($answer)
 {
 	$output = '';
-	switch (trim($answer)) {
-		case "Don’t know much, but would like to know more about it.":
-			$output = "Webinar, website, book a meeting";
-			break;
-		case 'Have heard about it, and would like to know more about how it could work for us.':
-			$output = "webinar- book a meeting- contact details";
-			break;
-		case "I understand the principle behind the process or systems, and have some ideas about how to use it, but haven’t started yet.":
-			$output = "Book a meeting or contact details";
-			break;
-		case "I use it, but would like to get more out of it.":
-			$output = "Webinar-book a meeting";
-			break;
-		case "I know it fairly well, and use it regularly.":
-			$output = "Contact details- webinar";
-			break;
-		default:
-			break;
-	}
+	// switch (trim($answer)) {
+	// 	case "Don’t know much, but would like to know more about it.":
+	// 		$output = "Webinar, website, book a meeting";
+	// 		break;
+	// 	case 'Have heard about it, and would like to know more about how it could work for us.':
+	// 		$output = "webinar- book a meeting- contact details";
+	// 		break;
+	// 	case "I understand the principle behind the process or systems, and have some ideas about how to use it, but haven’t started yet.":
+	// 		$output = "Book a meeting or contact details";
+	// 		break;
+	// 	case "I use it, but would like to get more out of it.":
+	// 		$output = "Webinar-book a meeting";
+	// 		break;
+	// 	case "I know it fairly well, and use it regularly.":
+	// 		$output = "Contact details- webinar";
+	// 		break;
+	// 	default:
+	// 		break;
+	// }
 	return $output;
 }
 
@@ -364,6 +366,7 @@ function showWebinar($point,$answer)
 	{
 		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean' class='btn btn-primary btn-lg'>Buy Now</a></li>";
 		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/events' class='btn btn-primary btn-lg'>Join our webinar</a></li>";
+		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/event-timeslots' class='btn btn-primary btn-lg'>Book personal demo</a></li>";
 	} else if($point >= 15 && $id < 52) {
 		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean' class='btn btn-primary btn-lg'>Buy Now</a></li>";
 		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/events' class='btn btn-primary btn-lg'>Join our webinar</a></li>";

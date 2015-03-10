@@ -128,12 +128,12 @@ include "footer.php";
 		var answer  = '';
 		var point   = 0;
 
-		if( $("[type='radio']:checked").length == 0 ){
-			$("[type='radio']").first().attr('checked','checked');
-		}
-		if( $("[type='checkbox']:checked").length == 0 ){
-			$("[type='checkbox']").first().attr('checked','checked');
-		}
+		// if( $("[type='radio']:checked").length == 0 ){
+		// 	$("[type='radio']").first().attr('checked','checked');
+		// }
+		// if( $("[type='checkbox']:checked").length == 0 ){
+		// 	$("[type='checkbox']").first().attr('checked','checked');
+		// }
 
 		$("#calculate").attr("checked",false);
 		$("#form00").submit(function(){

@@ -115,8 +115,8 @@ function showText($answers,$is_back,$back_answer)
  */
 function question17()
 {
-	echo "<input type='text' name='answer' class='answer' id='answer'><br>" ;
-	echo "<label><input type='checkbox' id='calculate'>Click here if you don't know your customer acquisition cost and need help to calculate it:</label>";
+	echo "<input type='text' name='answer' class='answer' id='answer'> e.g. 5000<br>" ;
+	echo "<label><input type='checkbox' id='calculate'>Click here if you don't know your customer acquisition cost and need help to calculate it</label>";
 	echo "<ul id='calculate-items'>";
 	echo "<li>How many worked with Marketing & Sales last year? <input type='number' class='calculate' id='sales' name='sales'>e.g 10</li>";
 	echo "<li>Their average salary per month? <input type='number' id='salary' class='calculate' name='salary'> eg. 3000 </li>";
