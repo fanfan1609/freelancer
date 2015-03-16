@@ -54,7 +54,9 @@ include "header.php";
         endif;?>
         <input  id='btnValidate'  type='submit' value='Send me result now'/>
     </form>
+    <form >
     <a href="show_result.php" id="show_result">No, thanks. Just show me my results</a> 
+    </form>
     <!-- <div id="cover"><img src="images/loading.gif" id="img-load"></div> -->
 </div>
 
@@ -74,12 +76,30 @@ $(function(){
 
     $("#show_result").click(function(e){
         e.preventDefault();
+        email   = $("input[name='email']").val();
+        url     = $(this).attr("href");
         $("#cover").fadeIn();
-        url = $(this).attr("href");
-        setTimeout(function(){
-            $("#cover").fadeOut();
-            window.location = url;
-        },1000);
-    })
+        if( email ){
+            $.ajax({
+                url : "send_result.php",
+                type: 'POST',
+                dataType : 'json',
+                success: function(data){
+                    if(data.success === true ){
+                        loading(url);
+                    }
+                }
+            });
+        } else {
+            loading(url);
+        }
+    });
 });
+
+function loading(url){
+    setTimeout(function(){
+        $("#cover").fadeOut();
+        window.location = url;
+    },1000);
+}
 </script>
