@@ -17,7 +17,7 @@ function showCheckBox($answers,$is_back,$back_answer)
 	foreach($answers as $answer )
 	{
 		$checked = in_array($answer['content'],$arr) ? 'checked' : '';
-		echo "<input type='checkbox' class='answer' name='answer[]' data-point='".$answer['point']."' value='".$answer['content']."' ".$checked." >".$answer['content']."<br>";
+		echo "<input type='checkbox' class='answer' name='answer[]' data-id='".$answer['id']."' data-point='".$answer['point']."' value='".$answer['content']."' ".$checked." >".$answer['content']."<br>";
 	}
 	echo "<input type='hidden' name='answer' value=''>";
 }

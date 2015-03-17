@@ -1,6 +1,9 @@
 <?php
-define("GUSER", ''); // Set up your gmail 
-define("GPWD", ''); // Set up your gmail password
+define("GUSER", 'xxxxx@gmail.com'); // Set up your gmail 
+define("GPWD", 'xxxx'); // Set up your gmail password
+define("URL","http://workspace.local/freelancer/question");
+define("FROM_EMAIL",'xxxx@abc.com');
+define("FROM_NAME",'Admin');
 // Define question array
 
 $question = array(

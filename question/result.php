@@ -54,8 +54,13 @@ include "header.php";
         endif;?>
         <input  id='btnValidate'  type='submit' value='Send me result now'/>
     </form>
-    <form >
-    <a href="show_result.php" id="show_result">No, thanks. Just show me my results</a> 
+    <form id="form_show_result">
+        <?php if(!empty($_SESSION['result'])) : ?>
+        <input type="hidden" name='result' value='<?php echo serialize($_SESSION["result"]) ?>' >
+        <input type="hidden" id='email_sent' name='email_sent' value='' ?>
+        <?php endif;?>
+        <input type='hidden' name='is_send_mail' value='1'>
+        <a href="show_result.php" id="show_result">No, thanks. Just show me my results</a> 
     </form>
     <!-- <div id="cover"><img src="images/loading.gif" id="img-load"></div> -->
 </div>
@@ -80,9 +85,11 @@ $(function(){
         url     = $(this).attr("href");
         $("#cover").fadeIn();
         if( email ){
+            $("#email_sent").val(email);
             $.ajax({
-                url : "send_result.php",
+                url : "sendmail.php",
                 type: 'POST',
+                data: $("#form_show_result").serialize(),
                 dataType : 'json',
                 success: function(data){
                     if(data.success === true ){
@@ -99,7 +106,9 @@ $(function(){
 function loading(url){
     setTimeout(function(){
         $("#cover").fadeOut();
-        window.location = url;
-    },1000);
+        //window.location = url;
+        var win = window.open(url, '_blank');
+        win.focus();
+    },2000);
 }
 </script>

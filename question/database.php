@@ -53,4 +53,30 @@ class DB
 		$result = $query->fetch(PDO::FETCH_ASSOC);
 		return $result['total'];
 	}
+
+	/**
+	 * Insert result record 
+	 * @param  mixed $data 
+	 * @return boolean
+	 */
+	function insertResult($data)
+	{
+		$query = $this->_db->prepare("INSERT INTO `results` (email,content,created) VALUES (?,?,now())");
+		$query->execute($data);
+		return $this->_db->lastInsertId();
+	}
+
+	/**
+	 * Get result
+	 * @param  int $id Result ID
+	 * @return mixed
+	 */
+	function getResult($id)
+	{
+		$query = $this->_db->prepare("SELECT * FROM results WHERE is_deleted = 0 AND id = :id");
+		$query->bindValue(':id',$id);
+		$query->execute();
+
+		return $query->fetch(PDO::FETCH_ASSOC);
+	}
 }
