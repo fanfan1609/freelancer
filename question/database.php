@@ -79,4 +79,19 @@ class DB
 
 		return $query->fetch(PDO::FETCH_ASSOC);
 	}
+
+	/**
+	 * Count result by email
+	 * @param  string $email Email
+	 * @return integer
+	 */
+	function countResultByEmail($email)
+	{
+		$query = $this->_db->prepare("SELECT count(id) as total FROM results where email = :email");
+		$query->bindValue(':email',$email);
+		$query->execute();
+
+		$result = $query->fetch(PDO::FETCH_ASSOC);
+		return $result['total'];
+	}
 }

@@ -1,0 +1,9 @@
+Hi Henrik, please read note before checking.
+
+1. Please use survey.sql in this folder for update database.
+
+2. Please check in config.php line 4
+define("URL","http://workspace.local/freelancer/question");
+Please change http://workspace.local/freelancer/question to your url of survey. 
+
+3. Currently I have problem when calling ajax to Otto form (Cross-domain). So I think this problem will be resovled when you upload to your server which have same domain which Otto form.

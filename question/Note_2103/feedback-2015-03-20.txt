@@ -1,0 +1,23 @@
+I didn't see that these answers showed up?
+
+As answering up to qid=5, aid=26:
+<li><i class="fa fa-file-text-o" class="fablue"></i> <b>Content Marketing:</b> When you spend time writing good content. You'll likely benefit greatly from it, but it can be tricky to monitor what its worth unless you measure the RoI also from the time you spend. You'll also want to be sure to use the content as news you send out, and by using Otto, you can also get double the effect as much material also can be re-used for long-term lead nurturing sequences.
+</li>
+
+As answering up to qid=5, aid=22:
+<li><i class="fa fa-qrcode" class="fablue"></i> <b>Digital print marketing:</b> Since you'll use Direct Marketing, you'll benefit from the QR-codes and the short PURLs (Personal URLs) that Otto&reg; will give you on the form <b>be2.co/xyzabc</b> which will help you track contacts & their actions.
+</li>
+
+As answering up to qid=9, aid=43:
+<li><i class="fa fa-magnet class="fared;"></i> <b>Getting more sales qualified leads:</b> Otto will deliver qualified leads by capturing website visitors, following-up event participants and client discussions through communication a little at a time (also known as drip marketing or lead nurturing). This allows your leads to interact through answering and clicking what information is most interesting for them and thereby making them qualify themselves to a higher lead-score until you know it's worthwhile to interact on a more personal level to drive sales.</li>
+
+As answering up to qid=9, aid=47:
+<li><i class="fa fa-heartbeat" class="fared"></i> <b>Finding out the buying-process</b> To track and monitor the customers' decision and buying process is easily made with Otto which enables you to get a complete overall view of how the customers react and interact after promotions and what they like on your website. It will even help you trigger new actions to e.g. ask them a very specific question only if they're interested in a particular piece of your content.</li>
+
+
+
+
+Small mistakes in wording: 
+Event-followup up --> Event-followup
+Anuuitas --> Annuitas
+costumer --> customer

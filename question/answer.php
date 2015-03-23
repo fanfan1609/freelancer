@@ -366,7 +366,6 @@ function showWebinar($point,$answer)
 	{
 		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean' class='btn btn-primary btn-lg'>Buy Now</a></li>";
 		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/events' class='btn btn-primary btn-lg'>Join our webinar</a></li>";
-		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/event-timeslots' class='btn btn-primary btn-lg'>Book personal demo</a></li>";
 	} else if($point >= 15 && $id < 52) {
 		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean' class='btn btn-primary btn-lg'>Buy Now</a></li>";
 		$html .= "<li><i class='fa fa-location-arrow fa-2x'></i><a href='http://www.sonician.com/en/events' class='btn btn-primary btn-lg'>Join our webinar</a></li>";

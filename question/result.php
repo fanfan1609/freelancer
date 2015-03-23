@@ -52,6 +52,7 @@ include "header.php";
         <?php
             endforeach;
         endif;?>
+        <input type="hidden" name="custome_30" id="url_sent" value="">
         <input  id='btnValidate'  type='submit' value='Send me result now'/>
     </form>
     <form id="form_show_result">
@@ -93,7 +94,19 @@ $(function(){
                 dataType : 'json',
                 success: function(data){
                     if(data.success === true ){
-                        loading(url);
+                        $("#url_sent").val( data.url );
+                        console.log(data.url);
+                        $.ajax({
+                            url : $("#result").attr('action'),
+                            type: 'POST',
+                            data: $("#result").serialize,
+                            // crossDomain: true,
+                            // dataType: 'jsonp',
+                            success: function(data){
+                                loading(url);
+                            }
+                        });
+                        // loading(url);
                     }
                 }
             });
