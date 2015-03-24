@@ -7,15 +7,22 @@ $result = array('success' => false,'message' => '');
 if(!empty($_POST['is_send_mail']))
 {
 	$data = array($_POST['email_sent'],$_POST['result']);
-	$lastInsertId = $survey->insertResult($data);
-	if( $lastInsertId ){
-		$url = URL . "/view_result.php?result_id=" . $lastInsertId;	
-		$result['success'] = true;
-		$result['message'] = "Save result success";
-		$result['url']	   = $url;
+	$email_exist = $survey->countResultByEmail($_POST['email_sent']);
+	if($email_exist == 0)
+	{
+		$lastInsertId = $survey->insertResult($data);
+		if( $lastInsertId ){
+			$url = URL . "/view_result.php?result_id=" . $lastInsertId;	
+			$result['success'] = true;
+			$result['message'] = "Save result success";
+			$result['url']	   = $url;
+		} else {
+			$result['message'] = 'Saving error';
+		}
 	} else {
-		$result['message'] = 'Saving error';
+		$result['message'] = 'Email has existed';
 	}
+	
 	// Send mail to user
 	// $subject = "Your result";
 	// $body = "Dear user \n\n";

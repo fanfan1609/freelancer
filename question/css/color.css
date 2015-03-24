@@ -43,15 +43,21 @@ ul.optional li {
 	width: 33%;
 }
 
-ul.webinar {
-	list-style: none outside none;
+ol.webinar {
+	/*list-style: none outside none;*/
 }
 
-ul.webinar li {
+ol.webinar li {
 	float: left;
+	margin-left: 30px;
 }
 
-ul.webinar li a{
+ol.webinar li a{
 	margin: 10px;
 	padding: 10px;
+}
+
+.price {
+	clear: both;
+	margin-left:  30px;
 }
