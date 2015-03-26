@@ -33,7 +33,7 @@ include "header.php";
 </style>
 <div id="cover"><i id="img-load" class="fa fa-spinner fa-spin fa-5x"></i></div>
 <div id="testbox">
-    <h1>Fill in your e-mail address and we’ll send you your results</h1>
+    <h2>Fill in your e-mail address and we’ll send you your results</h2>
     <form method='post' id="result" name="form_result" action='http://www.sonician.info/otto/handlers/form_handler.php' accept-charset='utf-8'>
         Email : <input type="email" name='email' value='' placeholder='Enter your email here' >
         <p>
@@ -48,11 +48,13 @@ include "header.php";
         if(!empty($_SESSION['result'])) :
             $results = array_values($_SESSION['result']);
             foreach($results as $i => $result):?>
-            <input type="hidden" name='custom_<?php echo $i+11 ?>' value='<?php echo $result['answer'] ?>' >
+			<!-- Insert value to first Otto-custom field in which to store the answers here, remember to create them in Otto! -->
+            <input type="hidden" name='custom_<?php echo $i+18 ?>' value='<?php echo $result['answer'] ?>' >
         <?php
             endforeach;
         endif;?>
-        <input type="hidden" name="custome_30" id="url_sent" value="">
+		<!-- Insert value to Otto-custom field in which to store the link -->
+        <input type="hidden" name="custome_34" id="url_sent" value="">
         <input  id='btnValidate'  type='submit' value='Send me result now'/>
     </form>
     <form id="form_show_result">

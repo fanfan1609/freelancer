@@ -79,9 +79,9 @@ include_once 'answer.php';
                 <?php endif;?>                
             </div>
             <?php if(!empty($_SESSION['result'][17])):
-                if (isset($_SESSION['result'][15])) $valueofclient = $_SESSION['result'][15]['answer'];
+                if (isset($_SESSION['result'][16])) $valueofclient = $_SESSION['result'][16]['answer'];
                 if (isset($_SESSION['result'][17])) $valuecac = $_SESSION['result'][17]['answer'];
-                if (isset($_SESSION['result'][16])) $numof_new_clients = $_SESSION['result'][16]['answer'];
+                if (isset($_SESSION['result'][15])) $numof_new_clients = $_SESSION['result'][15]['answer'];
 
                 if ($valuecac > 9000){
                     $spent_on_new = $numof_new_clients * $valuecac;
@@ -108,18 +108,18 @@ include_once 'answer.php';
                         According to Forrester Research your customer acquisition cost would be reduced by 33% which would save you approximately <b><?php echo $save_on_new?></b> by using Marketing Automation.<br>
                         That also means that you will increase your marketing budget with <b><?php echo $morebudget ?></b> which enables you to reach more people<br>
                         Gartner Group and CSO Insights say that it is possible to save <b><?php echo $savequick ?></b> within the first 6-9 months. <br>
-                        Something that we strongly believe in but also think depends on the line of business/industry is that we have seen how order values generally increased as a result of using Marketing Automation. We have seen that the more complex a deal is, the higher are the order values. Annuitas Group believes that it would lead to a generally 47% higher order value in your case, which means that you would earn <b><?php echo $ordervalueincrease?></b> more during a year. Observe that this calculation does not include the increased sales that Marketing Automation would lead to.<br>
+                        Something that we strongly believe in but also think depends on the line of business/industry is that we have seen how order values generally increased as a result of using Marketing Automation. We have seen that the more complex a deal is, the higher are the order values. Annuitas Group believes that it would lead to a generally 47% higher order value in general, which means that in your case you would earn <b><?php echo $ordervalueincrease?></b> more during a year. Note that this calculation does not include the increased sales that Marketing Automation would lead to.<br>
                     </dd>
                     <dt>Sonicians own results</dt>
                     <dd>
-                        If the most important way to reach new customers is through booking meetings and/or through cold calls, then the results from Forrester Research fits well with our observations of the effects at our clients that use our services and the Marketing Automation system named Otto®. In your case the use of our services would mean approximately <b><?php echo $save_on_new2?></b> in savings.<br>
+                        If the most important way to reach new customers is through booking meetings and/or through cold calls, then the results from Forrester Research fits well with our observations of the effects at our clients using Otto®. In your case, the use of our services would mean approximately <b><?php echo $save_on_new2?></b> in savings.<br>
                     </dd>
-                    <dt>Great effects on website convertion to leads</dt>
+                    <dt>Great effects on website conversion to leads</dt>
                     <dd>
                         There is not much external information or dataon how much more leads you can actually get from websites using Marketing Automation but Aberdeen Group means speaks of a 450% increase, Bull Solutions speaks of 3 times more and we have ourselves seen between 150% to 1700% lead-increase. In order to obtain data on how your increase can be we need to know more about the number of visitors at your website and more.<br>
                     </dd>
                     <dt>
-                        The result you will get is estimated based on data from:
+                        The result you will get is estimated based on data you entered: your value of a client (<b><?php echo $valueofclient?></b>), your number of new clients last year(<b><?php echo $numof_new_clients?></b>) and your current client acquisition cost (<b><?php echo $valueofclient?></b>), and data from:
                     </dt>
                     <dd>
                         <div class="row clearfix">

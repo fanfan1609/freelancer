@@ -116,11 +116,11 @@ function showText($answers,$is_back,$back_answer)
 function question17()
 {
 	echo "<input type='text' name='answer' class='answer' id='answer'> e.g. 5000<br>" ;
-	echo "<label><input type='checkbox' id='calculate'>Click here if you don't know your customer acquisition cost and need help to calculate it</label>";
-	echo "<ul id='calculate-items'>";
+	echo "<label style='font-size:0.75em;'><input type='checkbox' id='calculate'>Click here if you prefer to calculate your cost</label>";
+	echo "<ul id='calculate-items' style='font-size:0.75em;'>";
 	echo "<li>How many worked with Marketing & Sales last year? <input type='number' class='calculate' id='sales' name='sales'>e.g 10</li>";
-	echo "<li>Their average salary per month? <input type='number' id='salary' class='calculate' name='salary'> eg. 3000 </li>";
-	echo "<li>How much percentage of their time did they spend on NEW clients vs old ones (or other tasks) on average?  <input type='number' class='calculate' name='percent' id='percent'> eg. 75</li>";
+	echo "<li>Average salary/month? <input type='number' id='salary' class='calculate' name='salary'> eg. 3000 </li>";
+	echo "<li>How much time did they spend on NEW clients vs old or other tasks on average?  <input type='number' class='calculate' name='percent' id='percent'> eg. 75 (in %)</li>";
 	echo "<li>How much money was spent on marketing to NEW clients last year? <input type='number' class='calculate' id='spent' name='spent'> e.g. 25 000 </li>";
 	echo "</ul>";
 }

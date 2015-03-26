@@ -1,35 +1,42 @@
 .fablue {
-	color: blue;
-	font-size: 1.5em;
+    color: blue;
+    font-size: 2.5em !important;
 }
-
+.falightblue {
+    color: #55ACEE;
+    font-size: 2.5em !important;
+}
 .fagreen {
-	color: green;
-	font-size: 1.5em;
+    color: green;
+    font-size: 2.5em !important;
 }
 .faorange {
-	color: orange;
-	font-size: 1.5em;
+    color: orange;
+    font-size: 2.5em !important;
 }
-.faindigo {
-	color: indigo;
-	font-size: 1.5em;
+.facyan {
+    color: cyan;
+    font-size: 2.5em !important;
+}
+.fayellow {
+    color: yellow;
+    font-size: 2.5em !important;
+}
+.famagenta {
+    color: magenta;
+    font-size: 2.5em !important;
 }
 .fapurple {
-	color: purple;
-	font-size: 1.5em;
+    color: purple;
+    font-size: 2.5em !important;
 }
 .fared {
-	color: red;
-	font-size: 1.5em;
-}
-.fablue {
-	color: blue;
-	font-size: 1.5em;
+    color: red;
+    font-size: 2.5em !important;
 }
 .fagrey {
-	color: grey;
-	font-size: 1.5em;
+    color: grey;
+    font-size: 2.5em !important;
 }
 ul.optional {
 	list-style: none outside none;

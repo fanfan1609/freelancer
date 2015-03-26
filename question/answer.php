@@ -169,6 +169,12 @@ function answer_8($answer)
 function answer_9($answer)
 {
 	$output = array();
+	
+	if( strpos($answer, 'Get more web-traffic') !== false)
+	{
+	$output[] = "<li><i class='fa fa-sort-amount-asc faorange'></i> <b>Getting more web traffic:</b> With the outbound marketing features of Otto, you can certainly drive significantly more traffic to your site. Now, of course, this is primarily to be able to score your leads and to move them further in your sales process. For completely new traffic, Otto will rather help you harness these, but still, the Rent-a-Marketer Managed Marketing Automation service of Sonician will certainly also help you to set up campaigns that will drive more traffic, too.
+	</li>";
+	}
 	if( strpos($answer, 'Get more new sales qualified leads') !== false)
 	{
 		$output[] = "<i class='fa fa-magnet fared' ></i> <b>Getting more sales qualified leads:</b> Otto will deliver qualified leads by capturing website visitors, following-up event participants and client discussions through communication a little at a time (also known as drip marketing or lead nurturing). This allows your leads to interact through answering and clicking what information is most interesting for them and thereby making them qualify themselves to a higher lead-score until you know it's worthwhile to interact on a more personal level to drive sales.<br>";
@@ -185,7 +191,7 @@ function answer_9($answer)
 	{
 		$output[] = "<i class='fa fa-clock-o faindigo'></i> <b>Save time:</b> The magazine <i>Sales Insights</i> claim that 10h/week of a sales-representative's time is spent prospecting, and only 16h actually talking to clients to close deals. In order to get more client-time, Otto will reduce the time of prospecting and follow-up. .<br>";
 	}
-	if( strpos($answer, "Get better track of customers")!== false)
+	if( strpos($answer, "Get better track of the buying process of customers")!== false)
 	{
 		$output[] = "<i class='fa fa-heartbeat fared' ></i> <b>Finding out the buying-process</b> To track and monitor the customers' decision and buying process is easily made with Otto which enables you to get a complete overall view of how the customers react and interact after promotions and what they like on your website. It will even help you trigger new actions to e.g. ask them a very specific question only if they're interested in a particular piece of your content.<br>";
 	}
@@ -215,13 +221,13 @@ function answer_10($answer)
 {
 	$output = '';
 	// switch (trim($answer)) {
-	// 	case "Don’t know much, but would like to know more about it.":
+	// 	case "Do not know much, but would like to know more about it.":
 	// 		$output = "Webinar, website, book a meeting";
 	// 		break;
 	// 	case 'Have heard about it, and would like to know more about how it could work for us.':
 	// 		$output = "webinar- book a meeting- contact details";
 	// 		break;
-	// 	case "I understand the principle behind the process or systems, and have some ideas about how to use it, but haven’t started yet.":
+	// 	case "I understand the principle behind the process or systems, and have some ideas about how to use it, but have not started yet.":
 	// 		$output = "Book a meeting or contact details";
 	// 		break;
 	// 	case "I use it, but would like to get more out of it.":
@@ -241,7 +247,7 @@ function answer_11($answer)
 {
 	$output = '';
 	switch (trim($answer)) {
-		case "No, and since we mainly have consumers or small businesses, I don’t think it’s applicable for me.":
+		case "No, and since we mainly have consumers or small businesses, I do not think it is applicable for me.":
 			$output = "";
 			break;
 		case 'No, but it might be useful for us to get more leads.':
@@ -308,10 +314,10 @@ function answer_13($answer)
 {
 	$output = '';
 	switch (trim($answer)) {
-		case "We used to, but we don’t use it any more.":
+		case "We used to, but we do not use it any more.":
 			$output = "<i class='fa fa-briefcase faorange'></i> <b>CRM:</b> Many CRM-systems are cumbersome for the sales representatives and can't be used for bulk-handling of contacts for marketing purposes at all. Otto will allow you to do <i>both</i> the bulk-handling, and it also allows for a very fast and effective one-by-one handling as a CRM-system if you would like to use it that way.";
 			break;
-		case "No, but we’re thinking of using one.":
+		case "No, but we are thinking of using one.":
 			$output = "<i class='fa fa-briefcase faorange'></i> <b>CRM:</b> Many CRM-systems are cumbersome for the sales representatives and can't be used for bulk-handling of contacts for marketing purposes at all. Since Otto will allow you to do <i>both</i> the bulk-handling <i>and</i> the one-by-one handling in a very fast and efficient way, we suggest you try it out as a CRM-system as well.";
 			break;
 		case "Yes, we use Salesforce.":
@@ -351,9 +357,9 @@ function answer_19($answer)
 function showWebinar($point,$answer)
 {
 	$answers = array(
-		'48' =>'Don’t know much, but would like to know more about it.',
+		'48' =>'Do not know much, but would like to know more about it.',
 		'49' =>'Have heard about it, and would like to know more about how it could work for us.',
-		'50' =>'I understand the principle behind the process or systems, and have some ideas about how to use it, but haven’t started yet.',
+		'50' =>'I understand the principle behind the process or systems, and have some ideas about how to use it, but have not started yet.',
 		'51' =>'I already use your system Otto, but would like to know more to get more out of it.',
 		'52' =>'I already use another Marketing Automation system',
 	);
