@@ -212,11 +212,15 @@ include_once 'answer.php';
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> <a href='www.sonician.com'>www.sonician.com</a>
             </div>
             <div class="col-md-4 column">
+			
                 <address> 
                     <strong>Sonician</strong><br /> 
                     <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>: +46 31 31 34 370 <br>
                     <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>: support@sonician.com <br>
                 </address>
+				<div style="float:right;">
+					<input type="button" class="btn btn-primary btn-lg" onClick="window.print()" value="Print this Page"/>
+				</div>
             </div>
         </div>
     </div>
