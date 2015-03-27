@@ -22,9 +22,12 @@ include_once 'answer.php';
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
+				<div style="float:right;">
+					<input type="button" class="btn btn-primary btn-lg" onClick="window.print()" value="Print this Page"/>
+				</div>
                 <div class="page-header">
                     <h1>
-                        How Otto can help you get more clients<br>&ndash;Based on your individual answers
+                        According to your position...<br>&ndash;Marketing Automation &amp; Otto&reg; helps you:
                     </h1>
                 </div>
             </div>
@@ -119,9 +122,12 @@ include_once 'answer.php';
                         There is not much external information or dataon how much more leads you can actually get from websites using Marketing Automation but Aberdeen Group means speaks of a 450% increase, Bull Solutions speaks of 3 times more and we have ourselves seen between 150% to 1700% lead-increase. In order to obtain data on how your increase can be we need to know more about the number of visitors at your website and more.<br>
                     </dd>
                     <dt>
-                        The result you will get is estimated based on data you entered: your value of a client (<b><?php echo $valueofclient?></b>), your number of new clients last year(<b><?php echo $numof_new_clients?></b>) and your current client acquisition cost (<b><?php echo $valueofclient?></b>), and data from:
+                        The result you will get is estimated based on data you entered: your value of a client (<b><?php echo $valueofclient?></b>), your number of new clients last year(<b><?php echo $numof_new_clients?></b>) and your current client acquisition cost (<b><?php echo $valuecac?></b>), and data from:<br>
+						<img src="images/image001.gif" alt="Forrester Research">&nbsp;
+						<img src="images/image002.gif" alt="Aberdeen Group">&nbsp;<img src="images/image003.gif" alt="Gartner Group">&nbsp;<img src="images/image004.gif" alt="CSO Insights">&nbsp;<img src="images/image005.gif" alt="Annuitas">&nbsp;<img src="images/image006.gif" alt="Sonician">
                     </dt>
-                    <dd>
+                    <!--
+					<dd>
                         <div class="row clearfix">
                             <div class="col-md-4 column">
                                 <img src="images/image001.gif" alt="Forrester Research">
@@ -145,6 +151,7 @@ include_once 'answer.php';
                             </div>
                         </div>
                     </dd>
+					-->
                 </dl>
             </div>
         </div>

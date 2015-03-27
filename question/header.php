@@ -41,7 +41,7 @@ background: #bababa;
 .view { display:table-row; }
 
 input[type=submit]{
-	position:absolute; bottom:10;right:10;
+	position:absolute; bottom:50;left:10;
 	background-color: #7EBB14;
 	border-radius: 4px;
 	color: #FFF;

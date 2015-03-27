@@ -33,18 +33,8 @@ include "header.php";
 }
 
 #show_result {
-    position:absolute; bottom:10;right:270;
-    background-color: #7EBB14;
-    border-radius: 4px;
-    color: #FFF;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 7px 17px;
-    font-size: 17px;
-    background: none repeat scroll 0% 0% #7EBB14;
-    transition: all 0.2s linear 0s;
+    position:absolute; bottom:10;left:10;
+    font-size: 12px
 }
 </style>
 <div id="cover"><i id="img-load" class="fa fa-spinner fa-spin fa-5x"></i></div>
@@ -79,8 +69,8 @@ include "header.php";
         <input type="hidden" id='email_sent' name='email_sent' value='' ?>
         <?php endif;?>
         <input type='hidden' name='is_send_mail' value='1'>
-        <!-- <a href="show_result.php" id="show_result">No, thanks. Just show me my results</a>  -->
-        <button id="show_result">No, thanks. Just show me my results</button>
+        <a href="show_result.php" id="show_result">No, thanks. Just show me my results</a> 
+        <!-- <button id="show_result">No, thanks. Just show me my results</button> -->
     </form>
     <!-- <div id="cover"><img src="images/loading.gif" id="img-load"></div> -->
 </div>

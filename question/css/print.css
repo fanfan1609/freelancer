@@ -1,3 +1,15 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+html, body {
+    width: 210mm;
+    height: 297mm;
+}
+  /* ... the rest of the rules ... */
+
+
 .container {
 	display: table;
 }
@@ -65,26 +77,44 @@ footer ul li{
 }
 
 .fablue {
-	background-color: blue;
+    color: blue;
+    font-size: 2.5em !important;
 }
-
+.falightblue {
+    color: #55ACEE;
+    font-size: 2.5em !important;
+}
 .fagreen {
-	background-color: green;
+    color: green;
+    font-size: 2.5em !important;
 }
 .faorange {
-	background-color: orange;
+    color: orange;
+    font-size: 2.5em !important;
 }
-.faindigo {
-	background-color: indigo;
+.facyan {
+    color: cyan;
+    font-size: 2.5em !important;
+}
+.fayellow {
+    color: yellow;
+    font-size: 2.5em !important;
+}
+.famagenta {
+    color: magenta;
+    font-size: 2.5em !important;
 }
 .fapurple {
-	background-color: purple;
+    color: purple;
+    font-size: 2.5em !important;
 }
 .fared {
-	background-color: red;
+    color: red;
+    font-size: 2.5em !important;
 }
-.fablue {
-	background-color: blue;
+.fagrey {
+    color: grey;
+    font-size: 2.5em !important;
 }
 .fagrey {
 	background-color: grey
