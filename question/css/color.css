@@ -68,13 +68,3 @@ ol.webinar li a{
 	clear: both;
 	margin-left:  30px;
 }
-
-@page {
-    size: A4;
-    margin: 20mm 15mm 20mm 15mm;
-}
-@media print {
-    html, body {
-    width: 210mm;
-    height: 297mm;
-}

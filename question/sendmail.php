@@ -20,7 +20,7 @@ if(!empty($_POST['is_send_mail']))
 			$result['message'] = 'Saving error';
 		}
 	} else {
-		$result['message'] = 'Email has existed';
+		$result['message'] = 'This e-mail has already been used for this test. Try a different one.';
 	}
 	
 	// Send mail to user

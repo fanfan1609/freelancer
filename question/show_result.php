@@ -17,6 +17,7 @@ include_once 'answer.php';
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/print.css">
 </head>
 <body>
     <div class="container">

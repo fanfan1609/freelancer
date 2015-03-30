@@ -2,7 +2,7 @@
 define("DB","localhost");
 define("DB_NAME","survey");
 define("USR","root");
-define("PWD","123456");
+define("PWD","");
 
 //$db = new PDO(sprintf('mysql:host=%s;dbname=%s;charset=utf8', '%s', '%s',DB,DB_NAME,USR,PWD));
 class DB 
