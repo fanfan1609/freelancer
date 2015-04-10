@@ -172,8 +172,8 @@ function answer_9($answer)
 	
 	if( strpos($answer, 'Get more web-traffic') !== false)
 	{
-	$output[] = "<li><i class='fa fa-sort-amount-asc faorange'></i> <b>Getting more web traffic:</b> With the outbound marketing features of Otto, you can certainly drive significantly more traffic to your site. Now, of course, this is primarily to be able to score your leads and to move them further in your sales process. For completely new traffic, Otto will rather help you harness these, but still, the Rent-a-Marketer Managed Marketing Automation service of Sonician will certainly also help you to set up campaigns that will drive more traffic, too.
-	</li>";
+	$output[] = "<i class='fa fa-sort-amount-asc faorange'></i> <b>Getting more web traffic:</b> With the outbound marketing features of Otto, you can certainly drive significantly more traffic to your site. Now, of course, this is primarily to be able to score your leads and to move them further in your sales process. For completely new traffic, Otto will rather help you harness these, but still, the Rent-a-Marketer Managed Marketing Automation service of Sonician will certainly also help you to set up campaigns that will drive more traffic, too.
+	";
 	}
 	if( strpos($answer, 'Get more new sales qualified leads') !== false)
 	{
@@ -370,17 +370,19 @@ function showWebinar($point,$answer)
 	$html = "<div><ol class='webinar' type='A'>";
 	if($point < 15 && $id < 51)
 	{
-		$html .= "<li><a href='https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean' class='btn btn-primary btn-lg'>Buy Now</a></li>";
-		$html .= "<li><a href='http://www.sonician.com/en/events' class='btn btn-primary btn-lg'>Join our webinar</a></li>";
+		$html .= "<li><a href='http://be2.co/buy-now' class='btn btn-primary btn-lg'>Buy Now</a></li>";
+		$html .= "<li><a href='http://be2.co/join-webinar' class='btn btn-primary btn-lg'>Join our webinar</a></li>";
 		$html .= "</ol>";
-		$html .= "<p class='price'>From 99€/month</p>";
+		$html .= "<div style='clear:both;'></div><img style='float:right;width:195;height:142' src='http://www.sonician.com/images/Double-Guarantee-on-the-side_195x142.png' /><br><h3 class='text-primary'>Get started at no risk from 99€/month.</h3>
+		<p class='price'>Try it risk free with our Total Satisfaction & Best Value <a href='http://www.sonician.com/support/knowledgebase/308/Double-Guarantee-Total-Satisfaction-plus-Best-Value.html'>Double Guarantee</a> (incl. 30 days Money Back). </p>
+		<p class='price'>Pick a plan and sign up in 60 seconds. Upgrade, downgrade, cancel at any time. </p>";
 	} else if($point >= 15 && $id < 52) {
-		$html .= "<li><a href='https://www.sonician.com/support/cart.php?a=add&pid=63&carttpl=clean' class='btn btn-primary btn-lg'>Buy Now</a></li>";
-		$html .= "<li><a href='http://www.sonician.com/en/events' class='btn btn-primary btn-lg'>Join our webinar</a></li>";
-		$html .= "<li><a href='http://www.sonician.com/en/event-timeslots' class='btn btn-primary btn-lg'>Book personal demo</a></li>";
+		$html .= "<li><a href='http://be2.co/buy-now' class='btn btn-primary btn-lg'>Buy Now</a></li>";
+		$html .= "<li><a href='http://be2.co/join-webinar' class='btn btn-primary btn-lg'>Join our webinar</a></li>";
+		$html .= "<li><a href='http://be2.co/book-time-slot' class='btn btn-primary btn-lg'>Book personal demo</a></li>";
 		$html .= "</ol>";
 	} else if($point >= 15 && $id == 52){
-		$html .= "<li><a href='http://www.sonician.com/en/event-timeslots' class='btn btn-primary btn-lg'>Book personal demo</a></li>";
+		$html .= "<li><a href='http://be2.co/book-time-slot' class='btn btn-primary btn-lg'>Book personal demo</a></li>";
 		$html .= "</ol>";
 	}
 	$html .= "</div>";

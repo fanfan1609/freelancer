@@ -62,10 +62,11 @@ if( $question ) // Still has question
 ?>
 
 <div id="testbox">
+<div id="inline-testbox">
 <?php if(!empty($question)):?>
 	<form method='post' id="form00" name="form00" action='' accept-charset='utf-8'>
 	<?php if($question_id == 1):?>
-		<h1>Do the 2-minute test</h1>
+		<h1>Try the 2-minute test</h1>
 		<p>...to see if you can automate some of your client acquisition, and what you'll gain by it.</p>
 	<?php endif?>
 		<h3><?php echo $question['content'] ?></h3>
@@ -107,7 +108,7 @@ if( $question ) // Still has question
 	</form>
 <?php endif;?>
 </div>
-
+</div>
 <?php
 // Should not include this on the FIRST iframe in order to not tell Otto and Google Analytics that this page is visited twice!
 // include "$root/survey/test/footer.php";

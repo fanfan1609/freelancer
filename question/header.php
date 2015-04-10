@@ -3,7 +3,11 @@ session_start();
 include_once 'config.php';
 header('Content-Type: text/html; charset=utf-8');
 ?>
-	<style>
+<style>
+body{
+	margin:0px;
+	padding:0px;
+}
 body, p, h1, h2, h3{
 color: #333;
 font-family: sans-serif;
@@ -41,7 +45,7 @@ background: #bababa;
 .view { display:table-row; }
 
 input[type=submit]{
-	position:absolute; bottom:50;left:10;
+	position:absolute; bottom:10;right:10;
 	background-color: #7EBB14;
 	border-radius: 4px;
 	color: #FFF;
@@ -117,16 +121,36 @@ td {
 	border-radius: 4px;
 	color: #333;
 	font-weight: bold;
-	padding: 15px;
 	font-size: 17px;
 	background: none repeat scroll 0% 0% #fff;
 	background-size: cover;
 	transition: all 0.2s linear 0s;
 	font-family: sans-serif;
-	width:100%;
-	height:100%;
-	position:relative;
+	width: 100%;
+	height: 100%;
+	position:absolute;
 }
+#inline-testbox{
+	padding:15px;
+}
+/* @media all and (min-width: 960px) {
+    #testbox{
+        font-size: 18px;
+    }
+}
+ 
+@media all and (max-width: 959px) and (min-width: 600px) {
+    #testbox{
+        font-size: 16px;
+    }
+}
+ 
+@media all and (max-width: 599px) and (min-width: 320px) {
+    #testbox{
+        font-size: 12px;
+    }
+ 
+}*/
 select {
 	/* border: 1px inset black; */
 	width: 320px;
@@ -141,4 +165,26 @@ select {
 .sortable-number { width: 25px;float: right;line-height: 1em;text-align: center; }
 */
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	(function() {
+		
+		//Fetch current question id
+		var current_question_id = $("input#question_id").val();
+		
+		//If we're on the first question
+		if (current_question_id == 1){	
+			$("input[type='radio']").on("click", function (){
+				document.form00.setAttribute("target", "_blank");
+				document.form00.submit();
+			});	
+		}
+	})();
+
+});
+
+</script>
 <body>

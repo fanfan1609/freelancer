@@ -1,121 +1,18 @@
 @page {
   size: A4;
-  margin: 0;
+  margin: 20mm 15mm 20mm 15mm;
 }
 @media print {
-html, body {
-    width: 210mm;
-    height: 297mm;
-}
-  /* ... the rest of the rules ... */
-
-
-.container {
-	display: table;
-}
-
-.left {
-	/*float: left;*/
-	width: 35%;
-	display: table-cell;
-}
-
-.right {
-	/*float: right;*/
-	width: 65%;
-	border: solid 1px;
-	display: table-cell;
-	padding: 10px;
-}
-
-footer ul,.adv ul{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	text-align: center;
-}
-
-.adv ul li {
-	display: inline-block;
-	margin: 10px;
-	width: 23%;
-	position: relative;
-}
-
-.description ul {
-	/*margin: 0;
-	padding: 0*/
-	/*text-align: center;*/
-}
-
-.floatleft {
-	float: left;
-	margin-left : 10%;
-}
-
-.floatright {
-	float: right;
-	margin-right: 50%;
-}
-
-.description ul li {
-	/*display: inline-block;*/
-	/*margin: 5px;
-	width: 48%;*/
-}
-
-footer ul li{
-	display: inline-block;
-	margin: 10px;
-	width: 23%;
-	position: relative;
-	vertical-align: middle;
-}
-
-.clear {
-	clear : both;
-}
-
-.fablue {
-    color: blue;
-    font-size: 2.5em !important;
-}
-.falightblue {
-    color: #55ACEE;
-    font-size: 2.5em !important;
-}
-.fagreen {
-    color: green;
-    font-size: 2.5em !important;
-}
-.faorange {
-    color: orange;
-    font-size: 2.5em !important;
-}
-.facyan {
-    color: cyan;
-    font-size: 2.5em !important;
-}
-.fayellow {
-    color: yellow;
-    font-size: 2.5em !important;
-}
-.famagenta {
-    color: magenta;
-    font-size: 2.5em !important;
-}
-.fapurple {
-    color: purple;
-    font-size: 2.5em !important;
-}
-.fared {
-    color: red;
-    font-size: 2.5em !important;
-}
-.fagrey {
-    color: grey;
-    font-size: 2.5em !important;
-}
-.fagrey {
-	background-color: grey
+	html, body {
+	    width: 210mm;
+	    height: 297mm;
+	}
+	.printctrl {
+	display:none;
+	}
+	.page-break	{ 
+	display: block; 
+	page-break-before: always; 
+	}
+	
 }

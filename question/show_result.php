@@ -17,17 +17,18 @@ include_once 'answer.php';
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/print.css">
 </head>
 <body>
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
 				<div style="float:right;">
-					<input type="button" class="btn btn-primary btn-lg" onClick="window.print()" value="Print this Page"/>
+					<input type="button" class="btn btn-primary btn-lg printctrl" onClick="window.print()" value="Print this Page"/>
 				</div>
                 <div class="page-header">
                     <h1>
-                        According to your position...<br>&ndash;Marketing Automation &amp; Otto&reg; helps you:
+                        Evaluating your position...<br>&ndash;Marketing Automation &amp; Otto&reg; is:
                     </h1>
                 </div>
             </div>
@@ -79,6 +80,15 @@ include_once 'answer.php';
                         <p><?php echo $answer?></p>
                         <?php endif?>
                     <?php endif;?>
+					
+					<!-- Answer Question 6 -->
+					<?php 
+                        $a_6 = answer_6($_SESSION['result']['6']['answer']);
+                        if( $a_6 )
+                        {
+                            echo "<p>" . $a_6 . "</p>";
+                        }
+                    ?>
                 <?php endif;?>                
             </div>
             <?php if(!empty($_SESSION['result'][17])):
@@ -113,48 +123,23 @@ include_once 'answer.php';
                         Gartner Group and CSO Insights say that it is possible to save <b><?php echo $savequick ?></b> within the first 6-9 months. <br>
                         Something that we strongly believe in but also think depends on the line of business/industry is that we have seen how order values generally increased as a result of using Marketing Automation. We have seen that the more complex a deal is, the higher are the order values. Annuitas Group believes that it would lead to a generally 47% higher order value in general, which means that in your case you would earn <b><?php echo $ordervalueincrease?></b> more during a year. Note that this calculation does not include the increased sales that Marketing Automation would lead to.<br>
                     </dd>
-                    <dt>Sonicians own results</dt>
+                    <dt>Sonician's own results</dt>
                     <dd>
                         If the most important way to reach new customers is through booking meetings and/or through cold calls, then the results from Forrester Research fits well with our observations of the effects at our clients using Otto®. In your case, the use of our services would mean approximately <b><?php echo $save_on_new2?></b> in savings.<br>
                     </dd>
                     <dt>Great effects on website conversion to leads</dt>
                     <dd>
-                        There is not much external information or dataon how much more leads you can actually get from websites using Marketing Automation but Aberdeen Group means speaks of a 450% increase, Bull Solutions speaks of 3 times more and we have ourselves seen between 150% to 1700% lead-increase. In order to obtain data on how your increase can be we need to know more about the number of visitors at your website and more.<br>
+                        There is not much external information or data on how much more leads you can actually get from websites using Marketing Automation but Aberdeen Group speaks of a 450% increase, Bull Solutions of 3 times more and we have ourselves seen between 150% to 1700% increase in number of leads. In order to look at what your increase could be, we need to know more about the number of visitors to your website etc, information that we go through in a first workshop.<br>
                     </dd>
-                    <dt>
-                        The result you will get is estimated based on data you entered: your value of a client (<b><?php echo $valueofclient?></b>), your number of new clients last year(<b><?php echo $numof_new_clients?></b>) and your current client acquisition cost (<b><?php echo $valuecac?></b>), and data from:<br>
+                    <dd>
+                        <i style="font-size:.9em;">The result here is based on the data you entered: Your value of a client (<b><?php echo $valueofclient?></b>), your number of new clients last year(<b><?php echo $numof_new_clients?></b>) and your current client acquisition cost (<b><?php echo $valuecac?></b>), and data from:</i><br>
 						<img src="images/image001.gif" alt="Forrester Research">&nbsp;
 						<img src="images/image002.gif" alt="Aberdeen Group">&nbsp;<img src="images/image003.gif" alt="Gartner Group">&nbsp;<img src="images/image004.gif" alt="CSO Insights">&nbsp;<img src="images/image005.gif" alt="Annuitas">&nbsp;<img src="images/image006.gif" alt="Sonician">
-                    </dt>
-                    <!--
-					<dd>
-                        <div class="row clearfix">
-                            <div class="col-md-4 column">
-                                <img src="images/image001.gif" alt="Forrester Research">
-                            </div>
-                            <div class="col-md-4 column">
-                                <img src="images/image002.gif" alt="Aberdeen Group">
-                            </div>
-                            <div class="col-md-4 column">
-                                <img src="images/image003.gif" alt="Gartner Group">
-                            </div>
-                        </div>
-                        <div class="row clearfix">
-                            <div class="col-md-4 column">
-                                <img src="images/image004.gif" alt="CSO Insights">
-                            </div>
-                            <div class="col-md-4 column">
-                                <img src="images/image005.gif" alt="Annuitas">
-                            </div>
-                            <div class="col-md-4 column">
-                                <img src="images/image006.gif" alt="Sonician">
-                            </div>
-                        </div>
                     </dd>
-					-->
                 </dl>
             </div>
         </div>
+		<div class="page-break"></div>
         <?php endif;?>
         <div class="row clearfix">
             <div class="col-md-12 column">
@@ -183,25 +168,25 @@ include_once 'answer.php';
                             <?php endif;?>
                         <?php endif?>
                     <?php endforeach;?>
-                    <?php 
-                        $a_6 = answer_6($_SESSION['result']['6']['answer']);
-                        if( $a_6 )
-                        {
-                            echo "<p>" . $a_6 . "</p>";
-                        }
-                    ?>
+                    
                 <?php endif;?>
                 </ul>
             </div>
         </div>
+		<div class="row clearfix">
+			<h3 class="text-primary">Easy to get started:</h3>
+			<p><b>Gamified in-line tutorial, Support and Training is included</b></p>
+			<p>Otto comes with a built-in, gamified tutorial so you'll quickly pick-up how to reap all benefits of the system and at the same time, you'll see how well you've taken advantage of it compared to others!</p>
+			<p>You'll also benefit from our 3 x 45 min webinar training series that you're eligible to sign up for when you have your own system:<br>
+			<a href="http://www.sonician.com/en/otto-training-webinars-content">Otto Training times & Dates</a>. </p>
+		</div>
         <div class="row clearfix">
             <div class="jumbotron clearfix">
                 <h1>
                     What now?
                 </h1>
                 <p>
-                    You’ll never forgive yourself unless you
-                    Try us
+                    You’ll never forgive yourself unless you Try us
                 </p>
                 <?php showWebinar($point,$_SESSION['result'][10]['answer']);?>
             </div>
@@ -219,7 +204,7 @@ include_once 'answer.php';
                     <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>: support@sonician.com <br>
                 </address>
 				<div style="float:right;">
-					<input type="button" class="btn btn-primary btn-lg" onClick="window.print()" value="Print this Page"/>
+					<input type="button" class="btn btn-primary btn-lg printctrl" onClick="window.print()" value="Print this Page"/>
 				</div>
             </div>
         </div>

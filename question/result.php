@@ -7,13 +7,14 @@ include "header.php";
 <link rel="stylesheet" href="css/colorbox.css">
 <style>
 #testbox{
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(images/00.jpg) repeat 0 0, url(images/00.jpg) repeat 0 0;
+	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(images/00.jpg) repeat 0 0, url(images/00.jpg) no-repeat;
     background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,0.7))), url(images/00.jpg) repeat 0 0;
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-    background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-    background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,0.7))), url(images/00.jpg) no-repeat;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) no-repeat;
+    background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) no-repeat;
+    background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) no-repeat;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) no-repeat;
+	background-size: 100% 100%;
 }
 
 #cover {
@@ -36,9 +37,14 @@ include "header.php";
     position:absolute; bottom:10;left:10;
     font-size: 12px
 }
+
+#btnValidate {
+    position: absolute;bottom: 50;left:10;
+}
 </style>
 <div id="cover"><i id="img-load" class="fa fa-spinner fa-spin fa-5x"></i></div>
 <div id="testbox">
+<div id="inline-testbox">
     <h2>Fill in your e-mail address and we’ll send you your results</h2>
     <form method='post' id="result" name="form_result" action='http://www.sonician.info/otto/handlers/form_handler.php' accept-charset='utf-8'>
         Email : <input type="email" name='email' value='' placeholder='Enter your email here' >
@@ -60,8 +66,8 @@ include "header.php";
             endforeach;
         endif;?>
 		<!-- Insert value to Otto-custom field in which to store the link -->
-        <input type="hidden" name="custome_34" id="url_sent" value="">
-        <input  id='btnValidate'  type='submit' value='Send me result now'/>
+        <input type="hidden" name="custom_34" id="url_sent" value="">
+        <input  id='btnValidate'  type='button' value='Send me the result now'/>
     </form>
     <form id="form_show_result">
         <?php if(!empty($_SESSION['result'])) : ?>
@@ -74,6 +80,7 @@ include "header.php";
     </form>
     <!-- <div id="cover"><img src="images/loading.gif" id="img-load"></div> -->
 </div>
+</div>
 
 <?php
 // Should not include this on the FIRST iframe in order to not tell Otto and Google Analytics that this page is visited twice!
@@ -82,6 +89,7 @@ include "footer.php";
 ?>
 <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
 <script type="text/javascript">
+var query = '';
 $(function(){
     // $("#result").submit(function(){
     //     if( !$("input[name='email']").val() ){
@@ -96,56 +104,88 @@ $(function(){
             alert("Enter your email please");
             return false;
         }
-        $("#btnValidate").colorbox({
-            iframe:true, 
-            width:"80%", 
-            height:"500px",
-            href : "http://www.sonician.info/otto/handlers/form_handler.php",
-            data : $("#result").serialize()
-        });
+        saveResultAndpostToOttoForm($("input[name='email']").val());
+        // query += "?email=" + $("input[name='email']").val();
+        // query += "&cellphone=" + $("input[name='cellphone']").val();
+        // // query += "&seq=161&sender=1&a=sub&ref=2mintest-en"
+        // $("#result").find("input[type='hidden']").each(function(){
+        //     name = $(this).attr('name');
+        //     query += "&" + name +"=" + $(this).val();
+        // });
+        // console.log(query);
+        // $.colorbox({
+        //     iframe:true, 
+        //     width:"80%", 
+        //     height:"500px",
+        //     href : "http://www.sonician.info/otto/handlers/form_handler.php" + query,
+        // });
     });
 
-    $("#show_result").colorbox({
-        iframe:true, 
-        width:"80%", 
-        height:"500px",
-        href : "show_result.php"
+    $("#show_result").click(function(e){
+        e.preventDefault();
+        email   = $("input[name='email']").val();
+        url     = $(this).attr("href");
+        $("#cover").fadeIn();
+        if( email ){
+            saveResultAndpostToOttoForm(email);
+        } else {
+            $("#cover").fadeOut();
+          
+			//Redirect to page if low res, colorbox if not
+			if (parent.innerWidth < 1024 ){
+				document.location.href = "./show_result.php";
+			}else{		
+				$("#show_result").colorbox({
+					iframe:true, 
+					width:"80%", 
+					height:"500px",
+					href : "show_result.php"
+				});
+			}
+	
+        }
     });
-    // $("#show_result").click(function(e){
-    //     e.preventDefault();
-    //     email   = $("input[name='email']").val();
-    //     url     = $(this).attr("href");
-    //     $("#cover").fadeIn();
-    //     if( email ){
-    //         $("#email_sent").val(email);
-    //         $.ajax({
-    //             url : "sendmail.php",
-    //             type: 'POST',
-    //             data: $("#form_show_result").serialize(),
-    //             dataType : 'json',
-    //             success: function(data){
-    //                 if(data.success === true ){
-    //                     $("#url_sent").val( data.url );
-    //                     console.log(data.url);
-    //                     $.ajax({
-    //                         url : $("#result").attr('action'),
-    //                         type: 'POST',
-    //                         data: $("#result").serialize,
-    //                         // crossDomain: true,
-    //                         // dataType: 'jsonp',
-    //                         success: function(data){
-    //                             loading(url);
-    //                         }
-    //                     });
-    //                     // loading(url);
-    //                 }
-    //             }
-    //         });
-    //     } else {
-    //         loading(url);
-    //     }
-    // });
 });
+
+function saveResultAndpostToOttoForm(email){
+    $("#email_sent").val(email);
+    $.ajax({
+        url : "sendmail.php",
+        type: 'POST',
+        data: $("#form_show_result").serialize(),
+        dataType : 'json',
+        success: function(data){
+            if(data.success === true ){
+                $("#url_sent").val( data.url );
+                var custom_query = '';
+                custom_query += "?email=" + $("input[name='email']").val();
+                custom_query += "&cellphone=" + $("input[name='cellphone']").val();
+                $("#result").find("input[type='hidden']").each(function(){
+                    name = $(this).attr('name');
+                    custom_query += "&" + name +"=" + $(this).val();
+                });
+                console.log(custom_query);
+                $("#cover").fadeOut();
+  
+			//Redirect to page if low res, colorbox if not
+			if (parent.innerWidth < 1024 ){  
+				document.location.href = "http://www.sonician.info/otto/handlers/form_handler.php" + custom_query;
+			}else{
+				$.colorbox({
+                    iframe:true, 
+                    width:"80%", 
+                    height:"500px",
+                    href : "http://www.sonician.info/otto/handlers/form_handler.php" + custom_query,
+                });
+			}	
+
+            } else {
+                alert(data.message);
+                $("#cover").fadeOut();
+            }
+        }
+    });
+}
 
 function loading(url){
     setTimeout(function(){
