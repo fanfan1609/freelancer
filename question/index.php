@@ -11,6 +11,7 @@ include_once "template.php";
 $survey 		= new DB();
 $back_answer 	= '';
 $is_back 		= 0;
+
 if( !empty($_POST['is_back']) )
 {
 	$question_id = $_POST['question_id'];
@@ -64,7 +65,7 @@ if( $question ) // Still has question
 <div id="testbox">
 <div id="inline-testbox">
 <?php if(!empty($question)):?>
-	<form method='post' id="form00" name="form00" action='' accept-charset='utf-8'>
+	<form method='post' id="form00" name="form00" action='<?php echo $_SERVER['PHP_SELF'] ."?q=" . $question_id ?>' accept-charset='utf-8'>
 	<?php if($question_id == 1):?>
 		<h1>Try the 2-minute test</h1>
 		<p>...to see if you can automate some of your client acquisition, and what you'll gain by it.</p>
@@ -112,7 +113,10 @@ if( $question ) // Still has question
 <?php
 // Should not include this on the FIRST iframe in order to not tell Otto and Google Analytics that this page is visited twice!
 // include "$root/survey/test/footer.php";
-include "footer.php";
+if( $question_id != 1)
+{
+	include "footer.php";	
+}
 ?>
 <script type="text/javascript">
 	var question_id 		= $("#question_id").val();
