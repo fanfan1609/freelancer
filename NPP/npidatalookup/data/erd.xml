@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATAMODEL>
+<TABLE NAME="NPI" ID="NPI">
+<FIELD NAME="Npi" DATATYPE="int(10)"></FIELD>
+<FIELD NAME="EntityTypeCode" DATATYPE="char(1)"></FIELD>
+<FIELD NAME="ReplacementNPI" DATATYPE="varchar(10)"></FIELD>
+<FIELD NAME="ProviderEnumDate" DATATYPE="date"></FIELD>
+<FIELD NAME="LastUpdateDate" DATATYPE="date"></FIELD>
+<FIELD NAME="NpiDeactReasonCode" DATATYPE="varchar(2)"></FIELD>
+<FIELD NAME="NpiDeactDate" DATATYPE="date"></FIELD>
+<FIELD NAME="NpiReactDate" DATATYPE="date"></FIELD>
+</TABLE>
+<TABLE NAME="Person Names" ID="PNAMES">
+<FIELD NAME="PersonNameNpi" DATATYPE="int(10)"></FIELD>
+<FIELD NAME="ProvLastNameLN" DATATYPE="varchar(35)"></FIELD>
+<FIELD NAME="ProvFirstName" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvMName" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvNamePreText" DATATYPE="varchar(5)"></FIELD>
+<FIELD NAME="ProvNameSufText" DATATYPE="varchar(10)"></FIELD>
+<FIELD NAME="ProvCredText" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvOtherLastName" DATATYPE="varchar(35)"></FIELD>
+<FIELD NAME="ProvOtherFirstName" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvOtherMName" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvOtherNamePreText" DATATYPE="varchar(5)"></FIELD>
+<FIELD NAME="ProvOtherNameSufText" DATATYPE="varchar(10)"></FIELD>
+<FIELD NAME="ProvOtherCredText" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvOtherLastNameTypeCode" DATATYPE="char(1)"></FIELD>
+<FIELD NAME="ProvBusMAdrFL" DATATYPE="varchar(55)"></FIELD>
+<FIELD NAME="ProvBusMAdrSL" DATATYPE="varchar(55)"></FIELD>
+<FIELD NAME="ProvBusMAdrCity" DATATYPE="varchar(40)"></FIELD>
+<FIELD NAME="ProvBusMAdrState" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="ProvBusMAdrPostCode" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusMAdrCountryCode" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="ProvBusMailingAdrTeleNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusMailingAdrFaxNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrFL" DATATYPE="varchar(55)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrSL" DATATYPE="varchar(55)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrCity" DATATYPE="varchar(40)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrState" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrPostCode" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrCountryCode" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrTeleNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrFaxNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProviderGenderCode" DATATYPE="char(1)"></FIELD>
+<FIELD NAME="IsSoleProprietor" DATATYPE="char(1)"></FIELD>
+</TABLE>
+<TABLE NAME="Taxonomies" ID="TAX">
+<FIELD NAME="TaxonomyNpi" DATATYPE="int(10)"></FIELD>
+<FIELD NAME="TaxonomySeqNumber" DATATYPE="int(11)"></FIELD>
+<FIELD NAME="HCProvTaxonomyCode" DATATYPE="varchar(12)"></FIELD>
+<FIELD NAME="ProvLicNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvLicNumberStateCode" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="HCProvPrimTaxonomySwitch" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="HCProvTaxonomyDesc" DATATYPE="varchar(100)"></FIELD>
+</TABLE>
+<TABLE NAME="Organization Names" ID="ORG">
+<FIELD NAME="OrgNpi" DATATYPE="int(10)"></FIELD>
+<FIELD NAME="EmployerIDNumber" DATATYPE="varchar(9)"></FIELD>
+<FIELD NAME="ProvOrgNameLN" DATATYPE="varchar(70)"></FIELD>
+<FIELD NAME="ProvOtherOrgName" DATATYPE="varchar(70)"></FIELD>
+<FIELD NAME="ProvOtherOrgNameTypeCode" DATATYPE="char(1)"></FIELD>
+<FIELD NAME="ProvBusMAdrFL" DATATYPE="varchar(55)"></FIELD>
+<FIELD NAME="ProvBusMAdrSL" DATATYPE="varchar(55)"></FIELD>
+<FIELD NAME="ProvBusMAdrCity" DATATYPE="varchar(40)"></FIELD>
+<FIELD NAME="ProvBusMAdrState" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="ProvBusMAdrPostCode" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusMAdrCountryCode" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="ProvBusMailingAdrTeleNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusMailingAdrFaxNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrFL" DATATYPE="varchar(55)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrSL" DATATYPE="varchar(55)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrCity" DATATYPE="varchar(40)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrState" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrPostCode" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrCountryCode" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrTeleNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="ProvBusPracLocAdrFaxNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="AuthOfficialLastName" DATATYPE="varchar(35)"></FIELD>
+<FIELD NAME="AuthOfficialFirstName" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="AuthOfficialMName" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="AuthOfficialTitle" DATATYPE="varchar(35)"></FIELD>
+<FIELD NAME="AuthOfficialTeleNumber" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="IsOrgSubpart" DATATYPE="char(1)"></FIELD>
+<FIELD NAME="ParentOrgLBN" DATATYPE="varchar(70)"></FIELD>
+<FIELD NAME="ParentOrgTIN" DATATYPE="varchar(9)"></FIELD>
+<FIELD NAME="AuthOfficialNamePreText" DATATYPE="varchar(5)"></FIELD>
+<FIELD NAME="AuthOfficialNameSufText" DATATYPE="varchar(10)"></FIELD>
+<FIELD NAME="AuthOfficialCredText" DATATYPE="varchar(20)"></FIELD>
+</TABLE>
+<TABLE NAME="Other IDs" ID="OTH">
+<FIELD NAME="OtherIDNpi" DATATYPE="int(10)"></FIELD>
+<FIELD NAME="OtherIDSeqNumber" DATATYPE="int(11)"></FIELD>
+<FIELD NAME="OtherProvID" DATATYPE="varchar(20)"></FIELD>
+<FIELD NAME="OtherProvIDTypeCode" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="OtherProvIDState" DATATYPE="char(2)"></FIELD>
+<FIELD NAME="OtherProvIDIssuer" DATATYPE="varchar(80)"></FIELD>
+</TABLE>
+</DATAMODEL>
