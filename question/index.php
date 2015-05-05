@@ -12,6 +12,17 @@ $survey 		= new DB();
 $back_answer 	= '';
 $is_back 		= 0;
 
+if( !empty($_GET['utm_source']) ){
+	$result = $survey->getResultByEmail($_GET['utm_source']);
+
+	if( $result ){
+		$_SESSION['result'] = unserialize($result['content']);
+		header("Location: result.php");exit;
+	} else {
+		$_SESSION['utm_source'] = $_GET['utm_source'];	
+	}
+}
+
 if( !empty($_POST['is_back']) )
 {
 	$question_id = $_POST['question_id'];
@@ -58,7 +69,12 @@ if( $question ) // Still has question
 } else {
 	// Has finished all
 	// ob_clean();
-	header("Location: result.php");
+	if( empty($_SESSION['utm_source']) ){
+		header("Location: result.php");	
+	} else {
+		header("Location: show_result.php");	
+	}
+	
 }
 ?>
 

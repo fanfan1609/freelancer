@@ -3,44 +3,11 @@ $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 //include "$root/survey/test/header.php";
 include "header.php";
 ?>
+<link rel="stylesheet" href="css/result.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/colorbox.css">
 <style>
-#testbox{
-	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(images/00.jpg) repeat 0 0, url(images/00.jpg) no-repeat;
-    background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%), url(images/00.jpg) repeat 0 0;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,0.7))), url(images/00.jpg) no-repeat;
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) no-repeat;
-    background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) no-repeat;
-    background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) no-repeat;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url(images/00.jpg) no-repeat;
-	background-size: 100% 100%;
-}
 
-#cover {
-    display:none; 
-    /*background: grey; */
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top : 50%;
-    left: 50%;
-    z-index: 100;
-    opacity : 0.5
-}
-
-#img-load { 
-  position:absolute; 
-}
-
-#show_result {
-    position:absolute; bottom:10;left:10;
-    font-size: 12px
-}
-
-#btnValidate {
-    position: absolute;bottom: 50;left:10;
-}
 </style>
 <div id="cover"><i id="img-load" class="fa fa-spinner fa-spin fa-5x"></i></div>
 <div id="testbox">
@@ -66,7 +33,7 @@ include "header.php";
             endforeach;
         endif;?>
 		<!-- Insert value to Otto-custom field in which to store the link -->
-        <input type="hidden" name="custom_34" id="url_sent" value="">
+        <input type="hidden" name="custom_38" id="url_sent" value="">
         <input  id='btnValidate'  type='button' value='Send me the result now'/>
     </form>
     <form id="form_show_result">

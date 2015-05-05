@@ -18,6 +18,7 @@ include_once 'answer.php';
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" href="css/print.css">
+    <link rel="stylesheet" href="css/colorbox.css">
 </head>
 <body>
     <div class="container">
@@ -209,7 +210,84 @@ include_once 'answer.php';
             </div>
         </div>
     </div>
+    <?php if(!empty($_SESSION['utm_source'])):?>
+    <form id="form_show_result">
+        <?php if(!empty($_SESSION['result'])) : ?>
+        <input type="hidden" name='result' value='<?php echo serialize($_SESSION["result"]) ?>' >
+        <input type="hidden" id='email_sent' name='email_sent' value='' ?>
+        <?php endif;?>
+        <input type='hidden' name='is_send_mail' value='1'>
+        <!-- <button id="show_result">No, thanks. Just show me my results</button> -->
+    </form>
+    <form method='post' id="result" name="form_result" action='http://www.sonician.info/otto/handlers/form_handler.php' accept-charset='utf-8'>
+        <input type='hidden' name='seq' value='161'/>
+        <input type='hidden' name='sender' value='1'/>
+        <input type='hidden' name='a' value='sub' >
+        <input type='hidden' name='ref' value='2mintest-en' />
+        <?php 
+        if(!empty($_SESSION['result'])) :
+            $results = array_values($_SESSION['result']);
+            foreach($results as $i => $result):?>
+            <!-- Insert value to first Otto-custom field in which to store the answers here, remember to create them in Otto! -->
+            <input type="hidden" name='custom_<?php echo $i+18 ?>' value='<?php echo $result['answer'] ?>' >
+        <?php
+            endforeach;
+        endif;?>
+        <!-- Insert value to Otto-custom field in which to store the link -->
+        <input type="hidden" name="custom_38" id="url_sent" value="">
+    </form>
+    <?php endif; ?>
     <?php include 'footer.php';?>
     <script type="text/javascript" src='js/bootstrap.min.js'></script>
+
+    <?php if(!empty($_SESSION['utm_source'])):?>
+    <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+    <script>
+        var email = "<?php echo $_SESSION['utm_source']?>";
+        $(document).ready(function(){
+            saveResultAndpostToOttoForm(email);
+        });
+
+        function saveResultAndpostToOttoForm(email){
+            $("#email_sent").val(email);
+            $.ajax({
+                url : "sendmail.php",
+                type: 'POST',
+                data: $("#form_show_result").serialize(),
+                dataType : 'json',
+                success: function(data){
+                    if(data.success === true ){
+                        $("#url_sent").val( data.url );
+                        var custom_query = '';
+                        custom_query += "?email=" + email;
+                        $("#result").find("input[type='hidden']").each(function(){
+                            name = $(this).attr('name');
+                            custom_query += "&" + name +"=" + $(this).val();
+                        });
+                        console.log(custom_query);
+                        
+                        // $.get("http://www.sonician.info/otto/handlers/form_handler.php" + custom_query,function(data){
+
+                        // });
+                        //Redirect to page if low res, colorbox if not
+                        if (parent.innerWidth < 1024 ){  
+                            document.location.href = "http://www.sonician.info/otto/handlers/form_handler.php" + custom_query;
+                        }else{
+                            $.colorbox({
+                                iframe:true, 
+                                width:"80%", 
+                                height:"500px",
+                                href : "http://www.sonician.info/otto/handlers/form_handler.php" + custom_query,
+                            });
+                        }   
+                    } else {
+                        alert(data.message);
+                    }
+                }
+            });
+        }
+    </script>
+
+    <?php endif?>
 </body>
 </html>

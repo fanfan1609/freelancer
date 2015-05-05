@@ -94,4 +94,18 @@ class DB
 		$result = $query->fetch(PDO::FETCH_ASSOC);
 		return $result['total'];
 	}
+
+	/**
+	 * Get result by email
+	 * @param  string $email Email
+	 * @return mixed
+	 */
+	function getResultByEmail($email)
+	{
+		$query = $this->_db->prepare("SELECT * FROM results WHERE is_deleted = 0 AND email = :email");
+		$query->bindValue(':email',$email);
+		$query->execute();
+
+		return $query->fetch(PDO::FETCH_ASSOC);
+	}
 }
