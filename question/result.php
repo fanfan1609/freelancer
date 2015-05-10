@@ -38,7 +38,7 @@ include "header.php";
     </form>
     <form id="form_show_result">
         <?php if(!empty($_SESSION['result'])) : ?>
-        <input type="hidden" name='result' value='<?php echo serialize($_SESSION["result"]) ?>' >
+        <input type="hidden" name='result' value='<?php echo base64_encode(serialize($_SESSION["result"])) ?>' >
         <input type="hidden" id='email_sent' name='email_sent' value='' ?>
         <?php endif;?>
         <input type='hidden' name='is_send_mail' value='1'>
@@ -122,34 +122,33 @@ function saveResultAndpostToOttoForm(email){
         data: $("#form_show_result").serialize(),
         dataType : 'json',
         success: function(data){
-            if(data.success === true ){
-                $("#url_sent").val( data.url );
-                var custom_query = '';
-                custom_query += "?email=" + $("input[name='email']").val();
-                custom_query += "&cellphone=" + $("input[name='cellphone']").val();
-                $("#result").find("input[type='hidden']").each(function(){
-                    name = $(this).attr('name');
-                    custom_query += "&" + name +"=" + $(this).val();
-                });
-                console.log(custom_query);
-                $("#cover").fadeOut();
+   //          if(data.success === true ){
+   //              $("#url_sent").val( data.url );
+   //              var custom_query = '';
+   //              custom_query += "?email=" + $("input[name='email']").val();
+   //              custom_query += "&cellphone=" + $("input[name='cellphone']").val();
+   //              $("#result").find("input[type='hidden']").each(function(){
+   //                  name = $(this).attr('name');
+   //                  custom_query += "&" + name +"=" + $(this).val();
+   //              });
+   //              console.log(custom_query);
+   //              $("#cover").fadeOut();
   
-			//Redirect to page if low res, colorbox if not
-			if (parent.innerWidth < 1024 ){  
-				document.location.href = "http://www.sonician.info/otto/handlers/form_handler.php" + custom_query;
-			}else{
-				$.colorbox({
-                    iframe:true, 
-                    width:"80%", 
-                    height:"500px",
-                    href : "http://www.sonician.info/otto/handlers/form_handler.php" + custom_query,
-                });
-			}	
-
-            } else {
-                alert(data.message);
-                $("#cover").fadeOut();
-            }
+			// //Redirect to page if low res, colorbox if not
+   //  			if (parent.innerWidth < 1024 ){  
+   //  				document.location.href = "http://www.sonician.info/otto/handlers/form_handler.php" + custom_query;
+   //  			}else{
+   //  				$.colorbox({
+   //                      iframe:true, 
+   //                      width:"80%", 
+   //                      height:"500px",
+   //                      href : "http://www.sonician.info/otto/handlers/form_handler.php" + custom_query,
+   //                  });
+   //  			}	
+   //          } else {
+   //              alert(data.message);
+   //              $("#cover").fadeOut();
+   //          }
         }
     });
 }

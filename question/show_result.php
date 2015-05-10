@@ -213,7 +213,7 @@ include_once 'answer.php';
     <?php if(!empty($_SESSION['utm_source'])):?>
     <form id="form_show_result">
         <?php if(!empty($_SESSION['result'])) : ?>
-        <input type="hidden" name='result' value='<?php echo serialize($_SESSION["result"]) ?>' >
+        <input type="hidden" name='result' value='<?php echo base64_encode(serialize($_SESSION["result"])) ?>' >
         <input type="hidden" id='email_sent' name='email_sent' value='' ?>
         <?php endif;?>
         <input type='hidden' name='is_send_mail' value='1'>
